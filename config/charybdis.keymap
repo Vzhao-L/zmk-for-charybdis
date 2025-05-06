@@ -27,7 +27,7 @@
             bindings = <
 &kp F1            &kp F2                &kp F3                &kp F4            &kp F5              &kp F6             &kp F7                         &kp F8     &kp F9            &kp F10            &kp F11  &kp F12
 &kp CAPS          &kp                   &kp                   &kp               &kp                 &kp                &kp                            &kp        &kp UP            &kp                &kp      &kp
-&kp LEFT_COMMAND  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE        &kp K_VOLUME_DOWN   &kp C_VOLUME_UP    &kp                            &kp LEFT   &kp DOWN          &kp RIGHT          &kp      &kp
+&kp LEFT_COMMAND  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE        &kp C_VOLUME_DOWN   &kp C_VOLUME_UP    &kp                            &kp LEFT   &kp DOWN          &kp RIGHT          &kp      &kp
 &kp LEFT_SHIFT    &kp K_PREVIOUS        &kp K_NEXT            &kp K_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp                &kp GRAVE                      &kp TILDE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp      &kp MINUS
                                                               &kp LEFT_CONTROL  &kp LEFT_ALT        &to 0              &kp LS(LA(LC(LG(LEFT_META))))  &kp
                                                                                 &mkp MB1            &mkp MB2           &kp DELETE
