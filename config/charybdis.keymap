@@ -1,10 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-
 
 &lt {
     tapping-term-ms = <200>;
@@ -13,34 +10,29 @@
 };
 
 / {
-
-   keymap {
+    keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &kp N5      &kp N6     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E         &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O             &kp P     &kp BSLH
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
-                                &kp LEFT_ALT  &kp SPACE  &to 1       &kp LWIN   &kp SPACE
-                                              &mkp MB1   &mkp MB2    &kp ENTER
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4            &kp N5      &kp N6                    &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
+&kp TAB         &kp Q   &kp W   &kp E         &kp R             &kp T       &kp Y                     &kp U      &kp I      &kp O             &kp P     &kp BSLH
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F             &kp G       &kp H                     &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp V             &kp B       &kp N                     &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
+                                &kp LEFT_ALT  &kp LEFT_COMMAND  &to 1       &kp LS(LA(LC(LG(LWIN))))  &kp SPACE
+                                              &mkp MB1          &mkp MB2    &kp ENTER
             >;
-
-
         };
 
         layer_1 {
             bindings = <
-&kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6        &kp F7     &kp F8       &kp F9          &kp F10        &kp F11   &kp F12
-&kp CAPS        &none            &none            &none            &none            &none         &none      &none        &kp UP          &none          &none     &none
-&kp LEFT_SHIFT  &none            &none            &none            &bt BT_NXT       &bt BT_CLR    &none      &kp LEFT    &kp DOWN         &kp RIGHT      &none     &none
-&kp LCTRL       &none            &none            &none            &none            &none         &none      &none       &kp PERIOD    &kp RIGHT_BRACKET  &none    &kp EQUAL
-                                                  &kp LEFT_ALT     &kp SPACE        &to 0         &none      &none
-                                                                   &mkp MB1         &mkp MB2      &kp ENTER
+&kp F1          &kp F2  &kp F3  &kp F4        &kp F5      &kp F6        &kp F7     &kp F8    &kp F9      &kp F10            &kp F11  &kp F12
+&kp CAPS        &none   &none   &none         &none       &none         &none      &none     &kp UP      &none              &none    &none
+&kp LEFT_SHIFT  &none   &none   &none         &bt BT_NXT  &bt BT_CLR    &none      &kp LEFT  &kp DOWN    &kp RIGHT          &none    &none
+&kp LCTRL       &none   &none   &none         &none       &none         &none      &none     &kp PERIOD  &kp RIGHT_BRACKET  &none    &kp EQUAL
+                                &kp LEFT_ALT  &kp SPACE   &to 0         &none      &none
+                                              &mkp MB1    &mkp MB2      &kp ENTER
             >;
-
-          
         };
 
         /* layer_2 {
@@ -97,6 +89,3 @@
         };*/
     };
 };
-
-
-
