@@ -19,7 +19,7 @@
 &kp LEFT_COMMAND  &kp A   &kp S         &kp D             &kp F         &kp G       &kp H                           &kp J      &kp K      &kp L       &kp SEMI   &kp SINGLE_QUOTE
 &kp LEFT_SHIFT    &kp Z   &kp X         &kp C             &kp V         &kp B       &kp N                           &kp M      &kp COMMA  &kp PERIOD  &kp FSLH   &kp RIGHT_SHIFT
                                         &kp LEFT_CONTROL  &kp LEFT_ALT  &mo 1       &mt LS(LA(LC(LG(LWIN)))) ENTER  &kp SPACE
-                                                          &mkp MB1      &mkp MB2    &mo 1
+                                                          &mkp MB1      &mkp MB2    &kp BACKSPACE
             >;
         };
 
