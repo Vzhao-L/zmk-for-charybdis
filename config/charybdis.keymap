@@ -22,7 +22,7 @@
         q7: q7 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&q7 &kp LS(F) &kp L &kp Y &kp W &kp I &kp T &kp H &kp N2 &kp N4>;
+            bindings = <&none &kp LS(F) &kp L &kp Y &kp W &kp I &kp T &kp H &kp N2 &kp N4>;
             label = "Q7";
         };
     };
