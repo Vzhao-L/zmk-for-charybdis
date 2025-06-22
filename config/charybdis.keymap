@@ -46,7 +46,7 @@
 &kp F1           &kp F2  &kp F3  &kp F4            &kp F5        &kp F6    &kp F7                         &kp F8     &kp F9            &kp F10            &kp F11         &kp F12
 &kp C_VOLUME_UP  &kp Q   &kp W   &kp E             &kp R         &kp T     &none                          &none      &kp UP            &none              &kp LEFT_BRACE  &kp RIGHT_BRACE
 &kp C_VOL_DN     &kp A   &kp S   &kp D             &kp F         &kp G     &none                          &kp LEFT   &kp DOWN          &kp RIGHT          &none           &none
-&kp LG(LC(Q))    &kp Z   &kp X   &kp C             &kp V         &kp B     &kp GRAVE                      &kp TILDE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none           &kp LG(LA(ESC))
+&kp LG(LC(Q))    &kp Z   &kp X   &kp C             &kp V         &kp B     &kp GRAVE                      &kp TILDE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &q7             &kp LG(LA(ESC))
                                  &kp LEFT_CONTROL  &kp LEFT_ALT  &none     &kp LS(LA(LC(LG(RIGHT_GUI))))  &none
                                                    &none         &none     &none
             >;
