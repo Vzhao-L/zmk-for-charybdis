@@ -61,9 +61,9 @@ behaviors {
         layer_0 {
             bindings = <
 &kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &kp N5      &kp N6     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E         &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O             &kp P     &kp BSLH
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
+&kp TAB         &kp Q   &kp W   &kp F         &kp P      &kp B      &kp J      &kp L      &kp U      &kp Y             &kp SEMI  &kp BSLH
+&kp LEFT_SHIFT  &kp A   &kp R   &kp S         &kp T      &kp G       &kp M      &kp N      &kp E      &kp I             &kp O     &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp D      &kp V       &kp K      &kp H      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
                                 &kp LEFT_ALT  &kp SPACE  &to 1       &kp LWIN   &kp SPACE
                                               &mkp MB1   &mkp MB2    &kp ENTER
             >;
@@ -71,6 +71,8 @@ behaviors {
                              <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
 
         };
+// ... rest of layers remain same
+
 
         layer_1 {
             bindings = <
