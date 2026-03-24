@@ -65,7 +65,7 @@ behaviors {
 &kp ESC  &kp A   &kp R   &kp S         &kp T      &kp G       &kp M      &kp N      &kp E      &kp I             &kp O     &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp D      &kp V       &kp K      &kp H      &kp COMMA  &kp PERIOD  &kp FSLH  &kp MINUS
                                 &kp ENTER  &to 1  &mkp MB2       &kp LEFT_ALT   &kp LEFT_SHIFT
-                                              &kp SPACE   &mkp MB1    &kp LWIN
+                                              &kp LWIN   &mkp MB1    &kp SPACE
             >;
              sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
                              <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
