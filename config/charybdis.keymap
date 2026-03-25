@@ -77,7 +77,7 @@ behaviors {
         layer_1 {
             bindings = <
 &kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6        &kp F7         &kp F8       &kp F9          &kp F10            &kp F11   &kp F12
-&kp CAPS        &none            &none            &none            &BT_NXT          &BT_CLR       &none          &none        &none           &none              &none     &none
+&kp CAPS        &none            &none            &none            &bt BT_NXT       &bt BT_CLR    &none          &none        &none           &none              &none     &none
 &kp LEFT_SHIFT  &none            &none            &none            &none            &none         &none          &kp DOWN     &kp UP          &kp LEFT           &kp RIGHT &none
 &kp LCTRL       &none            &none            &none            &none            &none         &none          &none        &kp PERIOD      &kp RIGHT_BRACKET  &none     &kp EQUAL
                                                   &kp LEFT_ALT     &to 0            &mkp MB2      &kp LEFT_ALT   &bt SPACE
