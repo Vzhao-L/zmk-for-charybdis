@@ -80,7 +80,7 @@ behaviors {
 &kp CAPS        &none            &none            &none            &bt BT_NXT       &bt BT_CLR    &none          &none        &none           &none              &none     &none
 &kp LEFT_SHIFT  &none            &none            &none            &none            &none         &none          &kp DOWN     &kp UP          &kp LEFT           &kp RIGHT &none
 &kp LCTRL       &none            &none            &none            &none            &none         &none          &none        &kp PERIOD      &kp RIGHT_BRACKET  &none     &kp EQUAL
-                                                  &kp LEFT_ALT     &to 0            &mkp MB2      &kp LEFT_ALT   &bt SPACE
+                                                  &kp LEFT_ALT     &to 0            &mkp MB2      &kp LEFT_ALT   &kp SPACE
                                                                    &kp LWIN         &mkp MB1      &kp ENTER
             >;
 
