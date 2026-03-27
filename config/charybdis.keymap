@@ -77,7 +77,7 @@ behaviors {
         layer_1 {
             bindings = <
 &bt BT_SEL 0    &kp F1           &kp F2           &kp F3           &kp F4           &kp F5        &kp F6         &kp F7       &kp F8          &kp F9             &kp F10   &kp DEL 
-&bt BT_SEL 1    &none            &kp N1           &kp N2           &kp N3           &none         &bt BT_CLR     &none        &none           &none              &none     &kp BACKSPACE
+&bt BT_SEL 1    &to 2            &kp N1           &kp N2           &kp N3           &none         &bt BT_CLR     &none        &none           &none              &none     &kp BACKSPACE
 &bt BT_SEL 2    &kp N0           &kp N4           &kp N5           &kp N6           &none         &none          &kp DOWN     &kp UP          &kp LEFT           &kp RIGHT &none
 &bt BT_SEL 3    &none            &kp N7           &kp N8           &kp N9           &none         &none          &none        &kp PERIOD      &kp RIGHT_BRACKET  &none     &kp EQUAL
                                                   &kp LEFT_ALT     &to 0            &mkp MB2      &kp LEFT_ALT   &kp SPACE
@@ -87,20 +87,20 @@ behaviors {
           
         };
 
-        /* layer_2 {
+        layer_2 {
             bindings = <
-&none  &none   &none    &none   &none         &none         &kp N1         &none         &none     &none  &none   &to 0
-&none  &none   &none    &none   &none         &none         &none         &none          &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
-&none  &none   &none    &none   &none         &none         &none         &mkp LCLK     &mkp RCLK  &none  &none   &none
-&none  &none   &none    &none   &bt BT_NXT  &bt BT_CLR    &none         &none         &none     &none  &none   &none
-                                   &none         &none         &none         &none         &none
-                                                 &none         &none         &none
+&kp GRAVE       &kp N1  &kp N2  &kp N3          &kp N4     &kp N5      &kp N6         &kp N7     &kp N8     &kp N9            &kp N0    &kp DEL
+&kp TAB         &kp Q   &kp W   &kp E           &kp R      &kp T       &kp Y          &kp U      &kp I      &kp O             &kp P     &kp BACKSPACE
+&kp ESC         &kp A   &kp S   &kp D           &kp F      &kp G       &kp H          &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C           &kp V      &kp B       &kp N          &kp M      &kp COMMA  &kp PERIOD        &kp FSLH  &kp MINUS
+                                &kp LEFT_SHIFT  &to 1      &mkp MB2    &kp LEFT_ALT   &kp SPACE
+                                                &kp LWIN   &mkp MB1    &kp ENTER
             >;
-       
-            
+             sensor-bindings = <&scroll_vertical_encoder>,
+                             <&scroll_horizontal_encoder>;
         };
 
-       Mouse {
+        /* Mouse {
             bindings = <
 &none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
 &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
