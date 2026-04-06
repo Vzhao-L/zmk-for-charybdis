@@ -64,8 +64,8 @@ behaviors {
 &kp TAB         &kp Q   &kp W   &kp F           &kp P      &kp B       &kp J          &kp L      &kp U      &kp Y             &kp SEMI  &kp BACKSPACE
 &kp ESC         &kp A   &kp R   &kp S           &kp T      &kp G       &kp M          &kp N      &kp E      &kp I             &kp O     &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C           &kp D      &kp V       &kp K          &kp H      &kp COMMA  &kp PERIOD        &kp FSLH  &kp MINUS
-                                &kp LEFT_SHIFT  &to 1      &mkp MB2    &kp LEFT_ALT   &kp SPACE
-                                                &kp LWIN   &mkp MB1    &kp ENTER
+                                &kp LWIN        &to 1      &mkp MB2    &kp LEFT_ALT   &kp ENTER
+                                                &kp LEFT_SHIFT &mkp MB1    &kp SPACE
             >;
              sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
                              <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
@@ -80,8 +80,8 @@ behaviors {
 &bt BT_SEL 1    &to 2            &kp N7           &kp N8           &kp N9           &none         &bt BT_CLR     &kp EQUAL    &kp BSLH        &kp LBKT           &kp RBKT  &kp BACKSPACE
 &bt BT_SEL 2    &kp N0           &kp N4           &kp N5           &kp N6           &none         &none          &kp DOWN     &kp UP          &kp LEFT           &kp RIGHT &none
 &bt BT_SEL 3    &none            &kp N1           &kp N2           &kp N3           &none         &none          &none        &kp PERIOD      &kp RIGHT_BRACKET  &none     &kp EQUAL
-                                                  &kp LEFT_ALT     &to 0            &mkp MB2      &kp LEFT_ALT   &kp SPACE
-                                                                   &kp LWIN         &mkp MB1      &kp ENTER
+                                                  &kp LWIN         &to 0            &mkp MB2      &kp LEFT_ALT   &kp ENTER
+                                                                   &kp LEFT_SHIFT   &mkp MB1      &kp SPACE
             >;
 
           
@@ -91,10 +91,10 @@ behaviors {
             bindings = <
 &kp GRAVE       &kp N1  &kp N2  &kp N3          &kp N4     &kp N5      &kp N6         &kp N7     &kp N8     &kp N9            &kp N0    &kp DEL
 &kp TAB         &kp Q   &kp W   &kp E           &kp R      &kp T       &kp Y          &kp U      &kp I      &kp O             &kp P     &kp BACKSPACE
-&kp ESC         &kp A   &kp S   &kp D           &kp F      &kp G       &kp H          &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
+&kp ESC         &kp A   &kp S   &kp D           &kp F      &p G       &kp H          &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C           &kp V      &kp B       &kp N          &kp M      &kp COMMA  &kp PERIOD        &kp FSLH  &kp MINUS
-                                &kp LEFT_SHIFT  &to 1      &mkp MB2    &kp LEFT_ALT   &kp SPACE
-                                                &kp LWIN   &mkp MB1    &kp ENTER
+                                &kp LWIN        &to 1      &mkp MB2    &kp LEFT_ALT   &kp ENTER
+                                                &kp LEFT_SHIFT &mkp MB1    &kp SPACE
             >;
              sensor-bindings = <&scroll_vertical_encoder>,
                              <&scroll_horizontal_encoder>;
