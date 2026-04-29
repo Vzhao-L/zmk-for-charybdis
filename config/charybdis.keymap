@@ -19,7 +19,7 @@
 };
 
 &mt {
-    tapping-term-ms = <160>;
+    tapping-term-ms = <180>;
     flavor = "tap-preferred";
     quick-tap-ms = <100>;
 };
