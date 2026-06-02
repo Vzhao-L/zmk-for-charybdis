@@ -36,12 +36,12 @@
 
         MAIN {
             bindings = <
-&ht GRAVE ESC     &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                         &kp N6         &kp N7     &kp N8     &ht LEFT_BRACKET N9  &ht RIGHT_BRACKET N0  &ht EQUAL MINUS
-&ht CAPS TAB      &kp Q   &kp W   &kp E         &kp R         &kp T                          &kp Y          &kp U      &kp I      &kp O                &kp P                 &kp NON_US_BACKSLASH
-&kp LEFT_CONTROL  &kp A   &kp S   &kp D         &kp F         &kp G                          &kp H          &kp J      &kp K      &kp L                &kp SEMICOLON         &kp SQT
-&kp LEFT_SHIFT    &kp Z   &kp X   &ht LC(C) C   &ht LC(V) V   &lt 1 B                        &lt 2 N        &kp M      &kp COMMA  &kp PERIOD           &kp SLASH             &tog 1
-                                  &kp LEFT_WIN  &kp LEFT_ALT  &ht RIGHT_CONTROL RIGHT_ALT    &kp SPACE      &kp ENTER
-                                                &mkp MB1      &hm MB3 MB2                    &kp BACKSPACE
+&ht GRAVE ESC     &kp N1  &kp N2  &kp N3          &kp N4        &kp N5         &kp N6     &kp N7                &kp N8     &ht LEFT_BRACKET N9  &ht RIGHT_BRACKET N0  &ht EQUAL MINUS
+&ht CAPS TAB      &kp Q   &kp W   &kp E           &kp R         &kp T          &kp Y      &kp U                 &kp I      &kp O                &kp P                 &kp NON_US_BACKSLASH
+&kp LEFT_CONTROL  &kp A   &kp S   &kp D           &kp F         &kp G          &kp H      &kp J                 &kp K      &kp L                &kp SEMICOLON         &kp SQT
+&kp LEFT_WIN      &kp Z   &kp X   &ht LC(C) C     &ht LC(V) V   &lt 1 B        &lt 2 N    &kp M                 &kp COMMA  &kp PERIOD           &kp SLASH             &ht RIGHT_CONTROL RIGHT_ALT
+                                  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp ENTER      &kp SPACE  &ht DELETE BACKSPACE
+                                                  &mkp MB1      &hm MB3 MB2    &tog 1
             >;
 
             // [추가] MAIN 레이어에서는 트랙볼이 일반 마우스 커서로 움직입니다.
@@ -56,7 +56,7 @@
 &trans  &kp A   &kp S   &kp D   &kp F   &none     &none            &kp LEFT  &kp DOWN  &kp RIGHT      &none    &none
 &trans  &kp Z   &none   &kp C   &none   &none     &none            &kp END   &none     &kp PAGE_DOWN  &none    &trans
                         &trans  &trans  &trans    &trans           &trans
-                                &trans  &trans    &kp DELETE
+                                &trans  &trans    &trans
             >;
 
             // [추가] FIFA 레이어에서는 트랙볼을 굴리면 화면 스크롤(웹서핑용 휠)로 작동합니다.
