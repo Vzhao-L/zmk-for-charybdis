@@ -33,10 +33,11 @@
 };
 
 / {
+    // 위아래 스크롤 엔코더의 매핑 순서를 교차시켜 수직 방향을 직관적으로 반전했습니다.
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
         tap-ms = <100>;
     };
@@ -51,8 +52,7 @@
 
 
     behaviors {
-        // 일반 키용 Hold-Tap (구버전 필수 label 추가)
-
+        // 일반 키용 Hold-Tap
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP";
@@ -63,8 +63,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // 마우스 클릭용 Hold-Tap (구버전 필수 label 추가)
-
+        // 마우스 클릭용 Hold-Tap
         hm: hold_tap_mouse {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_MOUSE";
@@ -89,6 +88,7 @@
                                                             &mkp MB1     &hm MB3 MB2     &kp DEL
             >;
 
+            // MAIN 레이어에서는 트랙볼 본연의 부드러운 커서 이동 모드가 작동합니다.
             trackball-bindings = <&tmv_coarse>;
         };
 
@@ -102,7 +102,8 @@
                                 &trans  &trans    &trans
             >;
 
-            trackball-bindings = <&tsl>;
+            // [수정] 충돌을 일으키던 trackball-bindings를 도려내고, 완벽히 검증된 가상 엔코더만 작동하도록 유도합니다.
+            sensor-bindings = <&scroll_vertical_encoder>, <&scroll_horizontal_encoder>;
         };
 
         SETTING {
@@ -115,7 +116,8 @@
                                                        &none         &none         &none
             >;
 
-            trackball-bindings = <&tsl>;
+            // [수정] 세팅 레이어도 불순물 없이 순수 가상 엔코더 스크롤로 통일합니다.
+            sensor-bindings = <&scroll_vertical_encoder>, <&scroll_horizontal_encoder>;
         };
     };
 };
