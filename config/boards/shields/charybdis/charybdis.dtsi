@@ -7,11 +7,6 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-    };
-
     default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -42,20 +37,3 @@
     };
 
 };
-
-&spi0 {
-	compatible = "nordic,nrf-spim";
-	status = "disabled";
-
-	trackball: trackball@0 {
-		compatible = "pixart,pmw3610";
-		status = "disabled";
-		reg = <0>;
-		label = "TRACKBALL";
-		spi-max-frequency = <2000000>;
-		duplex = <2048>; // required by 3-wire spi
-	};
-};
-
-
-
