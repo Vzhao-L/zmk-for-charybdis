@@ -38,8 +38,8 @@
             bindings = <
 &ht GRAVE ESC     &kp N1       &kp N2       &kp N3          &kp N4       &kp N5          &kp N6         &kp N7     &kp N8     &ht LEFT_BRACKET N9  &ht RIGHT_BRACKET N0  &ht EQUAL MINUS
 &kp TAB           &kp Q        &kp W        &kp E           &kp R        &kp T           &kp Y          &kp U      &kp I      &kp O                &kp P                 &kp NON_US_BACKSLASH
-&kp LEFT_CONTROL  &kp A        &kp S        &kp D           &lt 1 F      &kp G           &kp H          &kp J      &kp K      &kp L                &kp SEMICOLON         &kp SQT
-&kp LEFT_WIN      &ht LC(Z) Z  &ht LC(X) X  &ht LC(C) C     &ht LC(V) V  &kp B           &lt 2 N        &kp M      &kp COMMA  &kp PERIOD           &kp SLASH             &ht RIGHT_CONTROL RIGHT_ALT
+&kp LEFT_CONTROL  &kp A        &kp S        &kp D           &lt 1 F      &kp G           &kp H          &lt 2 J    &kp K      &kp L                &kp SEMICOLON         &kp SQT
+&kp LEFT_WIN      &ht LC(Z) Z  &ht LC(X) X  &ht LC(C) C     &ht LC(V) V  &kp B           &ht B N        &kp M      &kp COMMA  &kp PERIOD           &kp SLASH             &ht RIGHT_CONTROL RIGHT_ALT
                                             &kp LEFT_SHIFT  &kp ENTER    &kp LEFT_ALT    &kp BACKSPACE  &kp SPACE
                                                             &mkp MB1     &hm MB3 MB2     &kp DEL
             >;
