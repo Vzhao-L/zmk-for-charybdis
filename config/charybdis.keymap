@@ -1,6 +1,5 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
-#include <input/processors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -70,15 +69,5 @@
             >;
 
         };
-    };
-};
-
-&trackball_listener {
-    // Main layer uses pointer movement by default.
-    input-processors = <&zip_xy_scaler 3 2>;
-
-    scroll_layers {
-        layers = <1 2>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 2>;
     };
 };

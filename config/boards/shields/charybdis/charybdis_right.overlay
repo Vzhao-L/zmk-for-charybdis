@@ -33,6 +33,7 @@
 &trackball {
 	status = "okay"; //okay
 	irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	scroll-layers = <1 2>;
 };
 
 &trackball_listener {
