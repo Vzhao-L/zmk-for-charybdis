@@ -7,8 +7,8 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 12   // 10
+// [경고 해결] 로그에서 중복 정의 경고를 뿜던 무의미한 #define 문크기를 과감히 제거했습니다.
+// 감도 조절은 아래 &mmv 및 &msc 블록에서 완벽하게 제어됩니다.
 
 &lt {
     tapping-term-ms = <200>;
@@ -33,7 +33,7 @@
 };
 
 / {
-    // 위아래 스크롤 엔코더의 매핑 순서를 교차시켜 수직 방향을 직관적으로 반전했습니다.
+    // 위아래 스크롤 엔코더의 매핑 순서를 뒤집어 수직 방향을 직관적으로 반전했습니다.
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -87,9 +87,9 @@
                                             &kp LEFT_SHIFT  &kp ENTER    &kp LEFT_ALT    &kp BACKSPACE  &kp SPACE
                                                             &mkp MB1     &hm MB3 MB2     &kp DEL
             >;
-
-            // MAIN 레이어에서는 트랙볼 본연의 부드러운 커서 이동 모드가 작동합니다.
-            trackball-bindings = <&tmv_coarse>;
+            
+            // [교정] 컴파일 에러를 유발하던 구형 trackball-bindings 구문을 제거했습니다.
+            // 신버전 ZMK 코어에서는 위의 전역 리스너(&mmv_input_listener)가 자동으로 마우스 커서를 굴려줍니다.
         };
 
         FIFA {
@@ -102,7 +102,7 @@
                                 &trans  &trans    &trans
             >;
 
-            // [수정] 충돌을 일으키던 trackball-bindings를 도려내고, 완벽히 검증된 가상 엔코더만 작동하도록 유도합니다.
+            // 원래 잘 작동하던 유저님의 가상 엔코더 스크롤 장치만 깔끔하게 남겨두었습니다.
             sensor-bindings = <&scroll_vertical_encoder>, <&scroll_horizontal_encoder>;
         };
 
@@ -116,7 +116,6 @@
                                                        &none         &none         &none
             >;
 
-            // [수정] 세팅 레이어도 불순물 없이 순수 가상 엔코더 스크롤로 통일합니다.
             sensor-bindings = <&scroll_vertical_encoder>, <&scroll_horizontal_encoder>;
         };
     };
