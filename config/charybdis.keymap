@@ -60,7 +60,7 @@
             >;
 
             // [추가] FIFA 레이어에서는 트랙볼을 굴리면 화면 스크롤(웹서핑용 휠)로 작동합니다.
-            trackball-bindings = <&tsl 0x01>;
+            trackball-bindings = <&tsl_inv>;
         };
 
         SETTING {
@@ -72,7 +72,7 @@
                                          &none         &none         &none         &none  &none
                                                        &none         &none         &none
             >;
-            trackball-bindings = <&tsl 0x01>;
+            trackball-bindings = <&tsl_inv>;
         };
     };
 };
