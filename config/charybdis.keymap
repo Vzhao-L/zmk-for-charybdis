@@ -60,8 +60,7 @@
             >;
 
             // [추가] FIFA 레이어에서는 트랙볼을 굴리면 화면 스크롤(웹서핑용 휠)로 작동합니다.
-
-            trackball-bindings = <&tsl>;
+            trackball-bindings = <&tsl SCROLL_VERT | SCROLL_HORIZ>;
         };
 
         SETTING {
@@ -73,10 +72,7 @@
                                          &none         &none         &none         &none  &none
                                                        &none         &none         &none
             >;
-
-            // [추가] 세팅 레이어에서도 마우스 휠 스크롤이 유지되도록 세팅합니다.
-
-            trackball-bindings = <&tsl>;
+            trackball-bindings = <&tsl SCROLL_VERT | SCROLL_HORIZ>;
         };
     };
 };
