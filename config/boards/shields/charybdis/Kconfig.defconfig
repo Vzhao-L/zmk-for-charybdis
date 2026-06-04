@@ -6,6 +6,9 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
 
+config SPI
+	default y
+
 endif
 
 if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT
@@ -13,7 +16,8 @@ if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT
 config ZMK_SPLIT
 	default y
 
-
+config ZMK_POINTING
+	default y
 
 endif
 
