@@ -83,9 +83,9 @@ behaviors {
         layer_1 {
             bindings = <
 &bt BT_SEL 0    &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                   &kp F6         &kp F7       &kp F8          &kp F9             &kp F10   &kp DEL 
-&bt BT_SEL 1    &to 2            &kp N7           &kp N8           &kp N9           &to 3                    &bt BT_CLR     &kp EQUAL    &kp BSLH        &kp LBKT           &kp RBKT  &kp BACKSPACE
+&bt BT_SEL 1    &to 2            &kp N7           &kp N8           &kp N9           &to 3                    &bt BT_CLR     &kp PG_DN    &kp PG_UP       &kp HOME           &kp END   &kp BACKSPACE
 &bt BT_SEL 2    &kp N0           &kp N4           &kp N5           &kp N6           &none                    &none          &kp DOWN     &kp UP          &kp LEFT           &kp RIGHT &none
-&bt BT_SEL 3    &none            &kp N1           &kp N2           &kp N3           &none                    &none          &none        &kp PERIOD      &kp RIGHT_BRACKET  &none     &kp EQUAL
+&bt BT_SEL 3    &none            &kp N1           &kp N2           &kp N3           &none                    &none          &kp EQUAL    &kp BSLH        &kp LBKT           &kp RBKT  &kp EQUAL
                                                   &kp LWIN         &kp C_VOICE_COMMAND &mkp MB2                 &kp LEFT_ALT   &kp SPACE
                                                                    &mkp MB1         &to 0                    &kp ENTER
             >;
