@@ -68,7 +68,7 @@ behaviors {
             bindings = <
 &kp GRAVE       &kp N1  &kp N2  &kp N3          &kp N4      &kp N5              &kp N6         &kp N7      &kp N8     &kp N9            &kp N0    &kp DEL
 &kp TAB         &kp Q   &kp W   &kp F           &kp P       &kp B               &kp J          &kp L       &kp U      &kp Y             &kp SEMI  &kp BACKSPACE
-&kp ESC         &mt LALT A &kp R   &kp S           &mt LSHFT T &kp G               &kp M          &mt RSHFT N &kp E      &kp I             &kp O     &kp SQT
+&kp ESC         &mt LSHFT A &kp R   &kp S           &kp T       &kp G               &kp M          &kp N       &kp E      &kp I             &mt RSHFT O &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C           &kp D       &kp V               &kp K          &kp H       &kp COMMA  &kp PERIOD        &kp FSLH  &kp MINUS
                                 &kp LWIN        &kp C_VOICE_COMMAND &mkp MB2            &kp LEFT_ALT   &kp SPACE
                                                 &mkp MB1    &mo 1               &kp ENTER
@@ -96,9 +96,9 @@ behaviors {
         layer_2 {
             bindings = <
 &kp GRAVE       &kp N1  &kp N2  &kp N3          &kp N4     &kp N5      &kp N6         &kp N7     &kp N8     &kp N9            &kp N0    &kp DEL
-&kp TAB         &kp Q   &kp W   &kp E           &kp R      &mt LSHFT T &kp Y          &kp U      &kp I      &kp O             &kp P     &kp BACKSPACE
-&kp ESC         &mt LALT A &kp S   &kp D           &kp F      &kp G       &kp H          &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C           &kp V      &kp B       &mt RSHFT N    &kp M      &kp COMMA  &kp PERIOD        &kp FSLH  &kp MINUS
+&kp TAB         &kp Q   &kp W   &kp E           &kp R      &kp T       &kp Y          &kp U      &kp I      &kp O             &kp P     &kp BACKSPACE
+&kp ESC         &mt LSHFT A &kp S   &kp D           &kp F      &kp G       &kp H          &kp J      &kp K      &kp L             &mt RSHFT SEMI  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C           &kp V      &kp B       &kp N          &kp M      &kp COMMA  &kp PERIOD        &kp FSLH  &kp MINUS
                                 &kp LWIN &kp C_VOICE_COMMAND &mkp MB2    &kp LEFT_ALT   &kp SPACE
                                                 &mkp MB1 &to 1               &kp ENTER
             >;
