@@ -8,7 +8,7 @@
 
 &default_transform {
     col-offset = <6>;
-};
+}; 
 
 &kscan0 {
 	col-gpios
@@ -22,15 +22,92 @@
 };
 
 // trackball bus
-&spi0 {
-	status = "okay"; //okay
-	sck-pin = <8>; //old
-    mosi-pin = <17>; //old
-    miso-pin = <17>;//old same as mosi (3-wire spi)
-	cs-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+            low-power-enable;
+        };
+    };
 };
 
-&trackball {
-	status = "okay"; //okay
-	irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+
+    trackball: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        scroll-layers = <1>;
+        //snipe-layers = <2>;
+      // automouse-layer = <3>;
+    };
+};
+
+
+//RGB bus
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <27>; /* number of LEDs */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
+
+
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };
