@@ -19,9 +19,10 @@
 };
 
 &mt {
-    tapping-term-ms = <180>;
+    tapping-term-ms = <200>;
     flavor = "tap-preferred";
     quick-tap-ms = <100>;
+    require-prior-idle-ms = <150>;
 };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
