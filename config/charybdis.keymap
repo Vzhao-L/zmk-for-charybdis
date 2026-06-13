@@ -1,3 +1,8 @@
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 50    // 기본 스크롤 속도(10)를 상향
+#define ZMK_MSC_TRIGGER_PERIOD_MS 10    //신호주기 변경
+#define ZMK_MSC_TIME_TO_MAX_SPEED_MS 100    //최고속도 도달 시간 변경
+#define ZMK_MSC_ACCEL_EXPONENT 5    //가속도 설정 변경
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -37,106 +42,198 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        esc_del {
+            bindings = <&HMKP DELETE ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <20 21>;
+        };
+
+        lang {
+            bindings = <&HMKP LG(SPACE) LANGUAGE_1>;
+            key-positions = <10 12>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+        };
+
+        minus_eaual {
+            bindings = <&HMKP EQUAL MINUS>;
+            key-positions = <19 18>;
+        };
+
+        slash_quest {
+            bindings = <&kp SLASH>;
+            key-positions = <29 28>;
+        };
+
+        backslash {
+            bindings = <&kp NON_US_BACKSLASH>;
+            key-positions = <19 29>;
+        };
+
+        wave {
+            bindings = <&kp GRAVE>;
+            key-positions = <1 2>;
+        };
+
+        win {
+            bindings = <&kp LEFT_WIN>;
+            key-positions = <22 21>;
+        };
+
+        bt_layer {
+            bindings = <&mo 5>;
+            key-positions = <24 4>;
+        };
+
+        blender_checker_select {
+            bindings = <&kp LC(LS(KP_PLUS))>;
+            key-positions = <28 27>;
+        };
+
+        prev_click {
+            bindings = <&mkp MB4>;
+            key-positions = <16 17>;
+        };
+
+        lclk {
+            bindings = <&mkp LCLK>;
+            key-positions = <11 12>;
+        };
+
+        rclk {
+            bindings = <&mkp RCLK>;
+            key-positions = <13 12>;
+        };
+
+        scrl_up {
+            bindings = <&msc SCRL_UP>;
+            key-positions = <2 3>;
+        };
+
+        scrl_down {
+            bindings = <&msc SCRL_DOWN>;
+            key-positions = <23 22>;
+        };
+
+        pg_up {
+            bindings = <&kp PAGE_UP>;
+            key-positions = <6 7>;
+        };
+
+        pg_dn {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <26 27>;
+        };
+
+        mclk {
+            bindings = <&mkp MCLK>;
+            key-positions = <14 15>;
+        };
+
+        home_end {
+            bindings = <&HMKP END HOME>;
+            key-positions = <32 33>;
+        };
+    };
+
+    behaviors {
+        HML: HMrow_Layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_Layer";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <130>;
+        };
+
+        HMKP: HMrow_KP {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow_kp";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        Base_Layer {
             bindings = <
-&lt 3 Q  &kp W  &kp E     &kp R     &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P
-&kp A    &kp S  &kp D     &kp F     &kp G        &kp H      &kp J            &kp K      &kp L    &kp ENTER
-&kp Z    &kp X  &kp C     &kp V     &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH
-                &mkp MB1  &mkp MB2  &lt 1 ESC    &kp SPACE  &lt 2 BACKSPACE
+&HMKP KP_NUMBER_1 Q  &kp W          &HMKP KP_NUMBER_3 E  &kp R          &HMKP PRINTSCREEN T    &kp Y      &HMKP KP_NUMBER_7 U  &kp I      &kp O    &HMKP KP_NUMBER_0 P
+&kp A                &kp S          &kp D                &HML 3 F       &HML 4 G               &kp H      &kp J                &kp K      &kp L    &HMKP SEMICOLON SQT
+&HMKP LC(Z) Z        &HMKP LC(X) X  &HMKP LC(C) C        &HMKP LC(V) V  &kp B                  &kp N      &kp M                &kp COMMA  &kp DOT  &kp ENTER
+                                    &kp LCTRL            &kp LEFT_ALT   &kp LEFT_SHIFT         &kp SPACE  &mo 1
             >;
+
+            label = "Base";
         };
 
-        layer_1 {
+        Num_Layer {
             bindings = <
-&kp F1          &kp F2     &kp F3        &kp F4    &kp F5     &kp F6     &kp F7            &kp F8         &kp F9     &kp F10
-&kp N1          &kp N2     &kp N3        &kp N4    &kp N5     &kp N6     &kp N7            &kp N8         &kp N9     &kp N0
-&kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp CAPS  &kp TAB    &kp MINUS  &kp LEFT_BRACKET  &kp SEMICOLON  &kp COMMA  &kp BACKSLASH
-                           &none         &none     &none      &kp F11    &kp F12
+&bootloader  &kp N7  &kp N8  &kp N9  &trans         &kp F11  &kp F12  &trans  &trans  &bootloader
+&kp MINUS    &kp N4  &kp N5  &kp N6  &trans         &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
+&kp N0       &kp N1  &kp N2  &kp N3  &kp KP_PLUS    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
+                     &trans  &trans  &trans         &trans   &trans
             >;
+
+            label = "Num";
         };
 
-        layer_2 {
+        Mouse_Layer {
             bindings = <
-&none  &none           &none           &none            &none            &none      &none     &none    &none       &none
-&none  &none           &kp UP_ARROW    &none            &kp PAGE_UP      &none      &none     &none    &none       &none
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp EQUAL  &kp RBKT  &kp SQT  &kp PERIOD  &kp SLASH
-                       &none           &none            &none            &none      &none
-            >;
-        };
-
-        layer_3 {
-            bindings = <
-&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
-&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
-              &none  &none  &none    &none       &none
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans  &trans
                 &trans  &trans  &trans    &trans  &trans
             >;
+
+            label = "Mouse";
         };
 
-        layer_5 {
+        Scroll_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
+&trans    &kp UP    &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans    &trans    &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                    &trans     &trans  &trans    &trans  &trans
             >;
+
+            label = "Scroll";
         };
 
-        layer_6 {
+        Snipe_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
+&trans    &kp UP    &trans     &trans  &trans    &trans    &trans    &trans     &trans  &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans    &trans    &kp UP    &trans     &trans  &trans
+&trans    &trans    &trans     &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+                    &trans     &trans  &trans    &trans    &trans
             >;
+
+            label = "Snipe";
         };
 
-        layer_7 {
+        BT_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &bt BT_CLR    &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                            &trans        &trans  &trans    &trans  &trans
             >;
-        };
 
-        layer_8 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        layer_9 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        layer_10 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
-            >;
+            label = "BT";
         };
 
         /* layer_2 {
