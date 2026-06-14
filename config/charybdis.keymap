@@ -16,7 +16,14 @@
     quick-tap-ms = <150>;
 };
 
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+&mmv_input_listener {
+    input-processors = <&zip_xy_scaler 2 1>;
+
+    scroller {
+        layers = <3>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+};
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
@@ -54,6 +61,14 @@
     };
 
     behaviors {
+        lclk_scroll: lclk_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&mo>, <&mkp>;
+        };
     };
 
     macros {
@@ -103,7 +118,7 @@
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
                                 &kp LEFT_ALT  &kp SPACE  &to 1       &kp LWIN   &kp SPACE
-                                              &mkp MB1   &mkp MB2    &kp ENTER
+                                            &lclk_scroll 3 MB1   &mkp MB2    &kp ENTER
             >;
 
             sensor-bindings =
