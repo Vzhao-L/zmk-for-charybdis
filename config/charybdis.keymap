@@ -54,7 +54,7 @@
     };
 
      behaviors {
-        5-layer3:5-layer3{
+        5-layer3:5-layer3 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "tap-preferred";
@@ -62,7 +62,7 @@
             bindings = <&Mo3_macro_A>, <&kp KP_5>;
         };
 
-        6-layer2:6-layer2{
+        6-layer2:6-layer2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "tap-preferred";
@@ -70,7 +70,7 @@
             bindings = <&Mo2_macro_A>, <&kp KP_6>;
         };
 
-         t-layer2:t-layer2{
+         t-layer2:t-layer2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "tap-preferred";
@@ -78,7 +78,7 @@
             bindings = <&Mo2_macro_A>, <&kp KP_T>;
         };
 
-        aop-layer3:aop-layer3{
+        aop-layer3:aop-layer3 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "tap-preferred";
@@ -86,7 +86,7 @@
             bindings = <&Mo3_macro_A>, <&kp KP_APOS>;
         };
 
-         P-layer2:P-layer2{
+         P-layer2:P-layer2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "tap-preferred";
@@ -137,10 +137,10 @@
         tap-ms = <0>;
         bindings
         = <&macro_press &mo 1>
-        , <&macro_tap <&rgb_ug RGB_COLOR_HSB(60, 100, 100)>
+        , <&rgb_ug RGB_COLOR_HSB(60, 100, 100)>
         , <&macro_pause_for_release>
         , <&macro_release &mo 1>
-        , <&macro_tap &rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
+        , <&rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
         };
 
         Mo2_macro_A: Mo2_macro_A {
@@ -148,10 +148,10 @@
         tap-ms = <0>;
         bindings
         = <&macro_press &mo 2>
-        , <&macro_tap <&rgb_ug RGB_COLOR_HSB(240, 100, 100)>
+        , <&rgb_ug RGB_COLOR_HSB(240, 100, 100)>
         , <&macro_pause_for_release>
         , <&macro_release &mo 2>
-        , <&macro_tap &rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
+        , <&rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
         };
 
         Mo3_macro_A: Mo3_macro_A {
@@ -159,10 +159,10 @@
         tap-ms = <0>;
         bindings
         = <&macro_press &mo 3>
-        , <&macro_tap <&rgb_ug RGB_COLOR_HSB(0, 0, 100)>
+        , <&rgb_ug RGB_COLOR_HSB(0, 0, 100)>
         , <&macro_pause_for_release>
         , <&macro_release &mo 3>
-        , <&macro_tap &rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
+        , <&rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
         };
 
     };
