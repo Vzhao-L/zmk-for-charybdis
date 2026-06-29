@@ -59,7 +59,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo3_macro_A>, <&kp KP_5>;
+            bindings = <&Mo3_macro_A>, <&kp KP 5>;
         };
 
         6-layer2:6-layer2 {
@@ -67,7 +67,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A>, <&kp KP_6>;
+            bindings = <&Mo2_macro_A>, <&kp KP 6>;
         };
 
          t-layer2:t-layer2 {
@@ -75,7 +75,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A>, <&kp KP_T>;
+            bindings = <&Mo2_macro_A>, <&kp KP T>;
         };
 
         aop-layer3:aop-layer3 {
@@ -83,7 +83,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo3_macro_A>, <&kp KP_APOS>;
+            bindings = <&Mo3_macro_A>, <&kp KP APOS>;
         };
 
          P-layer2:P-layer2 {
@@ -91,7 +91,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A>, <&kp KP_P>;
+            bindings = <&Mo2_macro_A>, <&kp KP P>;
         };
 
     };
@@ -172,7 +172,7 @@
 
         layer_0 {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &5-layer3      &kp6-layer2     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &5-layer3      &6-layer2     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
 &kp TAB         &kp Q   &kp W   &kp E         &kp R      &t-layer2      &kp Y      &kp U      &kp I      &kp O             &P-layer2    &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &aop-layer3
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
