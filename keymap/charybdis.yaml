@@ -1,0 +1,296 @@
+layout: {zmk_keyboard: charybdis}
+layers:
+  QWERTY:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: BACKSPACE, s: DELETE}
+  - LSHFT
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LCTRL
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - {t: ., s: ','}
+  - /
+  - ESC
+  - LGUI
+  - {t: '&num_word 5', h: '&nav_word 2'}
+  - SPACE
+  - {t: ENTER, h: FUNCTIONS}
+  - {t: '&sym_word 1', h: LEFT ALT}
+  SYMBOLS:
+  - {t: ▽, type: trans}
+  - +
+  - '*'
+  - '~'
+  - ''
+  - {t: ▽, type: trans}
+  - '-'
+  - '#'
+  - '@'
+  - ^
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '|'
+  - '{'
+  - '}'
+  - '`'
+  - /
+  - ':'
+  - '?'
+  - '['
+  - ']'
+  - $
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '"'
+  - <
+  - '>'
+  - '!'
+  - \
+  - _
+  - '&'
+  - (
+  - )
+  - {t: ., s: ','}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - SPACE
+  - ENTER
+  - {t: ▽, type: trans}
+  NUMBERS:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - J
+  - K
+  - '%'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - {t: ▽, type: trans}
+  - '='
+  - BSPC
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '"'
+  - {t: ▽, type: trans}
+  - Sft+G
+  - '5'
+  - V
+  - W
+  - '6'
+  - (
+  - )
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - SPACE
+  - ENTER
+  - {t: ▽, type: trans}
+  FUNCTIONS:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PREVIOUS
+  - NEXT
+  - VOLUME DOWN
+  - VOLUME UP
+  - MUTE
+  - PLAY PAUSE
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F6
+  - {t: ▽, type: trans}
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - BT PRV
+  - BT NXT
+  - {t: ▽, type: trans}
+  - F5
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F7
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  MANAGER:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Alt+;
+  - {t: 'Alt+[', h: (LA(LS(LBKT)))}
+  - {t: 'Alt+]', h: (LA(LS(RBKT)))}
+  - {t: ▽, type: trans}
+  - {t: Alt+O, h: (LA(LS(O)))}
+  - {t: Alt+M, h: (LA(LS(M)))}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Alt+1, h: (LA(LS(1)))}
+  - {t: Alt+2, h: (LA(LS(2)))}
+  - {t: Alt+3, h: (LA(LS(3)))}
+  - {t: Alt+4, h: (LA(LS(4)))}
+  - {t: Alt+9, h: (LS(LA(9)))}
+  - {t: Alt+H, h: (LS(LA(H)))}
+  - {t: Alt+J, h: (LA(LS(J)))}
+  - {t: Alt+K, h: (LA(LS(K)))}
+  - {t: Alt+L, h: (LA(LS(L)))}
+  - {t: Alt+T, h: (LA(LS(T)))}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Alt+5, h: (LA(LS(5)))}
+  - {t: Alt+6, h: (LA(LS(6)))}
+  - {t: Alt+7, h: (LA(LS(7)))}
+  - {t: Alt+8, h: (LA(LS(8)))}
+  - {t: ▽, type: trans}
+  - {t: Alt+Q, h: (LA(LS(R)))}
+  - {t: Alt+X, h: (LA(MINUS))}
+  - {t: Alt+Y, h: (LA(PLUS))}
+  - {t: Alt+P, h: (LA(I))}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - STACK
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NAV:
+  - {t: ▽, type: trans}
+  - Ctl+D
+  - Ctl+F
+  - Ctl+C
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - END
+  - HOME
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Ctl+A, h: (LEFT SHIFT)}
+  - '&mkp RCLK'
+  - '&mkp MCLK'
+  - '&mkp LCLK'
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Sft+TAB
+  - Ctl+TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PG DN
+  - PG UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - MANAGER
+  - {t: ▽, type: trans}
+  STACK:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Alt+LEFT
+  - Alt+DOWN
+  - Alt+UP
+  - Alt+RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
