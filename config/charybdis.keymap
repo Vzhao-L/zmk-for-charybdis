@@ -117,6 +117,218 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        softoff {
+            bindings = <&soft_off>;
+            key-positions = <1 14 25>;
+        };
+
+        caps_word_combo {
+            bindings = <&caps_word>;
+            key-positions = <37 40>;
+            layers = <0>;
+        };
+
+        lpkt {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <4 5>;
+            layers = <0>;
+        };
+
+        lbrt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <17 16>;
+            layers = <0>;
+        };
+
+        lbrs {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <29 28>;
+            layers = <0>;
+        };
+
+        rpkt {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <6 7>;
+            layers = <0>;
+        };
+
+        rbrt {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <19 18>;
+            layers = <0>;
+        };
+
+        rbrs {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <30 31>;
+            layers = <0>;
+        };
+
+        qw_esc {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        sys_reset_left {
+            bindings = <&sys_reset>;
+            key-positions = <0 12>;
+            layers = <3>;
+        };
+
+        bootloader_left {
+            bindings = <&bootloader>;
+            key-positions = <12 24>;
+            layers = <3>;
+        };
+
+        sys_reset_right {
+            bindings = <&sys_reset>;
+            key-positions = <11 23>;
+            layers = <3>;
+        };
+
+        bootloader_right {
+            bindings = <&bootloader>;
+            key-positions = <11 35>;
+            layers = <3>;
+        };
+
+        bt_clear {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <4 3 2>;
+            layers = <3>;
+        };
+
+        bt_clear_curr {
+            bindings = <&bt BT_CLR>;
+            key-positions = <14 15 16>;
+            layers = <3>;
+        };
+
+        new_q {
+            bindings = <&kp Q>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        new_z {
+            bindings = <&kp Z>;
+            key-positions = <3 4>;
+            layers = <0>;
+        };
+
+        new_del {
+            bindings = <&kp DEL>;
+            key-positions = <2 3 4>;
+            layers = <0>;
+        };
+
+        gth {
+            bindings = <&gth>;
+            key-positions = <4 16>;
+            layers = <0>;
+        };
+
+        lthc {
+            bindings = <&lth>;
+            key-positions = <16 28>;
+            layers = <0>;
+        };
+
+        h_tagc {
+            bindings = <&h_tag>;
+            key-positions = <7 19>;
+        };
+
+        arrowc {
+            bindings = <&arrow>;
+            key-positions = <8 20>;
+        };
+
+        to_win {
+            bindings = <&win_word 4>;
+            key-positions = <15 20>;
+        };
+    };
+
+    macros {
+        shrug: shrug {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp A &kp F &kp SPC>,
+                <&macro_tap>,
+                <&kp BACKSLASH>,
+                <&macro_tap>,
+                <&kp UNDER>,
+                <&macro_tap>,
+                <&kp LPAR>,
+                <&macro_press>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp N3 &kp N0 &kp C &kp N4 &kp SPC>,
+                <&macro_tap>,
+                <&kp RPAR>,
+                <&macro_tap>,
+                <&kp UNDER>,
+                <&macro_tap>,
+                <&kp FSLH>,
+                <&macro_press>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp A &kp F &kp SPC>;
+        };
+
+        gth: gth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GT &kp EQUAL>;
+            label = "GTH";
+        };
+
+        lth: lth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp EQUAL>;
+            label = "LTH";
+        };
+
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+            label = "ARROW";
+        };
+
+        h_tag: h_tag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND>;
+            label = "H_TAG";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
