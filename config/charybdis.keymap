@@ -1,29 +1,29 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors/num_word.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 12   // 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25
 
-&lt {
+/ {
     tapping-term-ms = <200>;
     flavor = "balanced";
     quick-tap-ms = <150>;
 };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    acceleration-exponent = <0>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <100>;
+    delay-ms = <0>;
 };
 
 &mmv {
@@ -32,64 +32,91 @@
     trigger-period-ms = <16>;
 };
 
-/ {
-    // 上下滚动编码器行为
+&soft_off { hold-time-ms = <2000>; };
 
+/ {
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
         tap-ms = <100>;
     };
-
-    // 左右滚动编码器行为
 
     scroll_horizontal_encoder: scroll_horizontal_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-
         tap-ms = <100>;
     };
 
     behaviors {
-    };
-
-    macros {
-        To1_macro: To1_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To1_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(128,100,50) &to 1>;
+        smart_num_nav: smart_num_nav {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&nav_word>, <&num_word>;
+            display-name = "Smart Num/Nav";
         };
 
-        To1_macro_A: To1_macro_A {
-            compatible = "zmk,behavior-macro";
-            label = "To1_macro_A";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(128,100,50) &to 1>;
+        nav_word: nav_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
+            ignore-modifiers;
         };
 
-        To0_macro: To0_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To0_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFR &to 0>;
+        sym_word: sym_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <
+                EXCL AT HASH DLLR PRCNT CARET AMPS ASTRK LPAR RPAR
+                PLUS MINUS EQUAL UNDER
+                LESS_THAN GREATER_THAN SEMICOLON COLON SLASH QMARK SQT DQT
+                LEFT_BRACKET RIGHT_BRACKET LEFT_BRACE RIGHT_BRACE
+                BACKSLASH PIPE GRAVE TILDE
+            >;
+            ignore-modifiers;
         };
 
-        To2_macro_A: To2_macro_A {
-            compatible = "zmk,behavior-macro";
-            label = "To2_macro_A";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(250,100,50) &to 2>;
+        win_word: win_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <
+                SEMICOLON LEFT_BRACKET RIGHT_BRACKET
+                O M
+                N1 N2 N3 N4 N5 N6 N7 N8 N9
+                H J K L T
+                Q P I
+                X Y
+                MINUS PLUS
+            >;
+            ignore-modifiers;
         };
 
-        To2_macro: To2_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To2_macro";
+        del_behavior: del_behavior {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DEL_BEHAVIOR";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(250,100,50) &to 2>;
+            mods = <(MOD_LALT)>;
+        };
+
+        dot_overwrite: dot_overwrite {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_OVERWRITE";
+            bindings = <&kp PERIOD>, <&kp COMMA>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        smart_sym_alt: smart_sym_alt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_ALT>, <&sym_word>;
+            display-name = "Smart Sym/Alt";
         };
     };
 
@@ -97,162 +124,89 @@
         compatible = "zmk,keymap";
 
         layer_0 {
+            display-name = "BASE";
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &kp N5      &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E         &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSLH
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-                                &kp LEFT_ALT  &kp SPACE  &to 1       &kp LWIN   &kp SPACE
+&kp TAB    &kp B                  &kp L                  &kp D                   &kp W                   &kp Z                   &kp MINUS               &kp F                   &kp O                 &kp U                  &kp J            &del_behavior
+&kp LSHFT  &kp N                  &kp R                  &kp T                   &kp S                   &kp G                   &kp Y                   &kp H                   &kp A                 &kp E                  &kp I            &kp SEMI
+&kp LCTRL  &kp Q                  &kp X                  &kp M                   &kp C                   &kp V                   &kp K                   &kp P                   &kp DOT               &kp COMMA              &dot_overwrite   &kp ESC
+                                      &kp LGUI            &smart_num_nav 5 2     &kp SPACE                                                   &lt 3 ENTER           &smart_sym_alt 1
             >;
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,
                 <&scroll_horizontal_encoder>;
-
-            // 编码器2：左右滚动
         };
 
         layer_1 {
+            display-name = "SYMBOLS";
             bindings = <
-&kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6        &kp F7     &kp F8    &kp F9      &kp F10   &kp F11   &kp F12
-&kp CAPS        &none            &none            &none            &none            &none         &none      &none     &kp UP      &none     &none     &none
-&kp LEFT_SHIFT  &none            &none            &none            &bt BT_NXT       &bt BT_CLR    &none      &kp LEFT  &kp DOWN    &kp RIGHT &none     &none
-                                                  &kp LEFT_ALT     &kp SPACE        &to 0         &none      &none
+&trans     &kp PLUS               &kp ASTRK              &kp TILDE               &none                   &trans                   &kp MINUS               &kp HASH                &kp AT                &kp CARET              &kp EQUAL        &trans
+&trans     &kp PIPE               &kp LBRC               &kp RBRC                &kp GRAVE               &kp FSLH                 &kp COLON               &kp QMARK               &kp LBKT              &kp RBKT               &kp DLLR         &trans
+&trans     &kp DQT                &kp LT                 &kp GT                  &kp EXCL                &kp BSLH                 &kp UNDER               &kp AMPS                &kp LPAR              &kp RPAR               &dot_overwrite   &trans
+                                      &trans              &trans                  &kp SPACE                                                   &kp ENTER              &trans
             >;
+
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                <&scroll_horizontal_encoder>;
         };
 
         layer_2 {
+            display-name = "NUMBERS";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans     &trans                 &trans                 &kp J                   &kp K                   &kp PRCNT                &trans                  &trans                  &kp MINUS             &trans                 &kp EQUAL        &kp BSPC
+&trans     &kp N1                 &kp N2                 &kp N3                  &kp N4                  &trans                   &trans                  &kp N7                  &kp N8                &kp N9                  &kp N0           &trans
+&trans     &kp DQT                &trans                 &kp LS(G)               &kp N5                  &kp V                    &kp W                   &kp N6                  &kp LPAR              &kp RPAR               &trans           &trans
+                                      &trans              &trans                  &kp SPACE                                                   &kp ENTER              &trans
             >;
+
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                <&scroll_horizontal_encoder>;
         };
 
         layer_3 {
+            display-name = "FUNCTIONS";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &kp C_PREVIOUS          &kp C_NEXT              &kp C_VOLUME_DOWN     &kp C_VOLUME_UP        &kp C_MUTE       &kp C_PLAY_PAUSE
+&trans     &kp F1                 &kp F2                 &kp F3                  &kp F4                  &kp F6                   &trans                  &kp F8                  &kp F9                &kp F10                 &kp F11          &kp F12
+&trans     &bt BT_PRV             &bt BT_NXT             &trans                  &kp F5                  &trans                   &trans                  &kp F7                  &trans                &trans                  &trans           &trans
+                                      &trans              &trans                  &trans                                                      &trans                 &trans
             >;
+
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                <&scroll_horizontal_encoder>;
         };
 
         layer_4 {
+            display-name = "MANAGER";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans     &trans                         &kp LA(SEMI)                        &mt (LA(LS(LBKT))) LA(LBKT)         &mt (LA(LS(RBKT))) LA(RBKT)         &trans                   &mt (LA(LS(O))) LA(O)  &mt (LA(LS(M))) LA(M)  &trans                 &trans                 &trans           &trans
+&trans     &mt (LA(LS(N1))) LA(N1)       &mt (LA(LS(N2))) LA(N2)            &mt (LA(LS(N3))) LA(N3)             &mt (LA(LS(N4))) LA(N4)             &mt (LS(LA(N9))) LA(N9)  &mt (LS(LA(H))) LA(H)  &mt (LA(LS(J))) LA(J)  &mt (LA(LS(K))) LA(K) &mt (LA(LS(L))) LA(L) &mt (LA(LS(T))) LA(T)  &trans
+&trans     &mt (LA(LS(N5))) LA(N5)       &mt (LA(LS(NUMBER_6))) LA(NUMBER_6) &mt (LA(LS(N7))) LA(N7)             &mt (LA(LS(N8))) LA(N8)             &trans                   &mt (LA(LS(R))) LA(Q)  &mt (LA(MINUS)) LA(X)  &mt (LA(PLUS)) LA(Y)  &mt (LA(I)) LA(P)      &trans           &trans
+                                           &trans                             &mo 6                               &trans                                                      &trans                 &trans
             >;
         };
 
         layer_5 {
+            display-name = "NAV";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans     &kp LC(D)              &kp LC(F)              &kp LC(C)               &kp LC(V)               &trans                   &trans                  &kp END                 &kp HOME              &trans                 &trans           &trans
+&trans     &mt (LEFT_SHIFT) LC(A) &mkp RCLK              &mkp MCLK               &mkp LCLK               &trans                   &kp LEFT                &kp DOWN                &kp UP                &kp RIGHT              &trans           &trans
+&trans     &trans                 &trans                 &kp LC(LS(TAB))         &kp LC(TAB)             &trans                   &trans                  &kp PG_DN               &kp PG_UP             &trans                 &trans           &trans
+                                      &trans              &trans                  &trans                                                      &mo 4                  &trans
             >;
         };
 
         layer_6 {
+            display-name = "STACK";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &trans                  &trans                  &trans                &trans                 &trans           &trans
+&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &kp LA(LEFT)            &kp LA(DOWN)            &kp LA(UP)            &kp LA(RIGHT)          &trans           &trans
+&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &trans                  &trans                  &trans                &trans                 &trans           &trans
+                                      &trans              &trans                  &trans                                                      &trans                 &trans
             >;
         };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        layer_8 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        layer_9 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        layer_10 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        /* layer_2 {
-            bindings = <
-&none  &none   &none    &none   &none         &none         &kp N1         &none         &none     &none  &none   &to 0
-&none  &none   &none    &none   &none         &none         &none         &none          &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
-&none  &none   &none    &none   &none         &none         &none         &mkp LCLK     &mkp RCLK  &none  &none   &none
-&none  &none   &none    &none   &bt BT_NXT  &bt BT_CLR    &none         &none         &none     &none  &none   &none
-                                   &none         &none         &none         &none         &none
-                                                 &none         &none         &none
-            >;
-       
-            
-        };
-
-       Mouse {
-            bindings = <
-&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
-&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
-&bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5         &mo 5       &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
-                                         &mo 5         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
-                                                       &none      &trans        &trans
-            >;
-
-            
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
-&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
-                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
-                                      &trans     &trans       &trans
-            >;
-                
-                
-               
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
-&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
-                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
-                                      &trans     &trans       &trans
-            >;
-                
-                
-        };*/
     };
 };
