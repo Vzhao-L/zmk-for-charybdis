@@ -48,26 +48,11 @@
             , <&key_physical_attrs 100 100 1000  200       0     0     0>
             , <&key_physical_attrs 100 100 1100  200       0     0     0>
             , <&key_physical_attrs 100 100 1200  200       0     0     0>
-            , <&key_physical_attrs 100 100    0  300       0     0     0>
-            , <&key_physical_attrs 100 100  100  300       0     0     0>
-            , <&key_physical_attrs 100 100  200  300       0     0     0>
             , <&key_physical_attrs 100 100  300  300       0     0     0>
             , <&key_physical_attrs 100 100  400  300       0     0     0>
             , <&key_physical_attrs 100 100  500  300       0     0     0>
             , <&key_physical_attrs 100 100  700  300       0     0     0>
             , <&key_physical_attrs 100 100  800  300       0     0     0>
-            , <&key_physical_attrs 100 100  900  300       0     0     0>
-            , <&key_physical_attrs 100 100 1000  300       0     0     0>
-            , <&key_physical_attrs 100 100 1100  300       0     0     0>
-            , <&key_physical_attrs 100 100 1200  300       0     0     0>
-            , <&key_physical_attrs 100 100  300  400       0     0     0>
-            , <&key_physical_attrs 100 100  400  400       0     0     0>
-            , <&key_physical_attrs 100 100  500  400       0     0     0>
-            , <&key_physical_attrs 100 100  700  400       0     0     0>
-            , <&key_physical_attrs 100 100  800  400       0     0     0>
-            , <&key_physical_attrs 100 100  400  500       0     0     0>
-            , <&key_physical_attrs 100 100  500  500       0     0     0>
-            , <&key_physical_attrs 100 100  700  500       0     0     0>
             ;
     };
 };
@@ -81,17 +66,15 @@
     };
 
     default_transform: keymap_transform_0 {
-		compatible = "zmk,matrix-transform";
+        compatible = "zmk,matrix-transform";
         columns = <12>;
-        rows = <5>;
+        rows = <4>;
 
         map = <
 			RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)                   RC(0,11) RC(0,10) RC(0,9) RC(0,8) RC(0,7) RC(0,6)
 			RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                   RC(1,11) RC(1,10) RC(1,9) RC(1,8) RC(1,7) RC(1,6)
 			RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                   RC(2,11) RC(2,10) RC(2,9) RC(2,8) RC(2,7) RC(2,6)
-			RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                   RC(3,11) RC(3,10) RC(3,9) RC(3,8) RC(3,7) RC(3,6)
-					                RC(4,1) RC(4,2) RC(4,3)                   RC(4,10)  RC(4,9)
-									        RC(4,4) RC(4,5)                   RC(4,11) 
+					                RC(3,1) RC(3,2) RC(3,3)                   RC(3,10) RC(3,9)
         >;
     };
 	
@@ -101,8 +84,7 @@
 
         diode-direction = "row2col";
 		row-gpios
-            = <&gpio0 31 GPIO_ACTIVE_HIGH>
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>
+            = <&gpio1 15 GPIO_ACTIVE_HIGH>
             , <&gpio0 24 GPIO_ACTIVE_HIGH>
 	        , <&gpio0 22 GPIO_ACTIVE_HIGH>
 	        , <&gpio1 6 GPIO_ACTIVE_HIGH>
