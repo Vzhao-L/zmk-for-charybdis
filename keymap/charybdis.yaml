@@ -86,12 +86,12 @@ layers:
   - {t: ▽, type: trans}
   NUMBERS:
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - +
+  - '*'
   - J
   - K
   - '%'
-  - {t: ▽, type: trans}
+  - '-'
   - {t: ▽, type: trans}
   - '-'
   - {t: ▽, type: trans}
@@ -102,8 +102,8 @@ layers:
   - '2'
   - '3'
   - '4'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - /
+  - ':'
   - '7'
   - '8'
   - '9'
