@@ -57,7 +57,7 @@
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         scroll-layers = <1>;
         //snipe-layers = <2>;
-      // automouse-layer = <3>;
+        automouse-layer = <8>;
     };
 };
 
@@ -111,5 +111,4 @@
         device = <&trackball>;
     };
 };
-
 
