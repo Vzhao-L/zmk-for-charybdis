@@ -109,10 +109,10 @@
 
         smart_sym_alt: smart_sym_alt {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp LEFT_ALT &sym_word 1>;
+            bindings = <&kp &sym_word>;
             display-name = "Smart Sym/Alt";
         };
     };
@@ -126,7 +126,7 @@
 &kp TAB    &kp B                  &kp L                  &kp D                   &kp W                   &kp Z                   &kp MINUS               &kp F                   &kp O                 &kp U                  &kp J            &del_behavior
 &kp LSHFT  &kp N                  &kp R                  &kp T                   &kp S                   &kp G                   &kp Y                   &kp H                   &kp A                 &kp E                  &kp I            &kp SEMI
 &kp LCTRL  &kp Q                  &kp X                  &kp M                   &kp C                   &kp V                   &kp K                   &kp P                   &kp DOT               &kp COMMA              &dot_overwrite   &kp ESC
-                                      &kp LGUI            &smart_num_nav 5 2     &kp SPACE                                                   &lt 3 ENTER           &smart_sym_alt 1
+                                      &kp LGUI            &smart_num_nav 5 2     &kp SPACE                                                   &lt 3 ENTER           &smart_sym_alt LEFT_ALT 1
             >;
 
             sensor-bindings =
