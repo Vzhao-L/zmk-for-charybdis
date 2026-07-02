@@ -166,7 +166,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: UTIL, type: held}
   - {t: ▽, type: trans}
   MANAGER:
   - {t: ▽, type: trans}
@@ -294,6 +294,48 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  UTIL:
+  - OUT TOG
+  - BT PRV
+  - BT NXT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RGB COLOR HSB(256,64,46)
+  - RGB BRD
+  - RGB BRI
+  - RGB SPD
+  - RGB SPI
+  - RGB EFF
+  - ''
+  - ''
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - RGB COLOR HSB(202,73,53)
+  - RGB TOG
+  - RGB HUI
+  - RGB HUD
+  - RGB SAI
+  - RGB SAD
+  - {t: BT, h: '0'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: UTIL, h: toggle}
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
 combos:
 - p: [1, 14, 25]
   k: '&soft_off'
@@ -323,22 +365,22 @@ combos:
   l: [QWERTY]
 - p: [0, 12]
   k: '&sys_reset'
-  l: [FUNCTIONS]
+  l: [UTIL]
 - p: [12, 24]
   k: '&bootloader'
-  l: [FUNCTIONS]
+  l: [UTIL]
 - p: [11, 23]
   k: '&sys_reset'
-  l: [FUNCTIONS]
+  l: [UTIL]
 - p: [11, 35]
   k: '&bootloader'
-  l: [FUNCTIONS]
+  l: [UTIL]
 - p: [4, 3, 2]
   k: BT CLR ALL
-  l: [FUNCTIONS]
+  l: [UTIL]
 - p: [14, 15, 16]
   k: BT CLR
-  l: [FUNCTIONS]
+  l: [UTIL]
 - p: [2, 3]
   k: Q
   l: [QWERTY]
