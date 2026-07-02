@@ -8,9 +8,6 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25
-
 / {
     tapping-term-ms = <200>;
     flavor = "balanced";
@@ -115,7 +112,7 @@
             #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp LEFT_ALT>, <&sym_word>;
+            bindings = <&kp LEFT_ALT>, <&sym_word 1>;
             display-name = "Smart Sym/Alt";
         };
     };
