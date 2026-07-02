@@ -16,6 +16,7 @@
 };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
@@ -37,6 +38,7 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
         tap-ms = <100>;
     };
 
@@ -44,6 +46,7 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
         tap-ms = <100>;
     };
 
@@ -54,6 +57,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&nav_word>, <&num_word>;
+
             display-name = "Smart Num/Nav";
         };
 
@@ -74,6 +78,7 @@
                 LEFT_BRACKET RIGHT_BRACKET LEFT_BRACE RIGHT_BRACE
                 BACKSLASH PIPE GRAVE TILDE
             >;
+
             ignore-modifiers;
         };
 
@@ -89,6 +94,7 @@
                 X Y
                 MINUS PLUS
             >;
+
             ignore-modifiers;
         };
 
@@ -96,6 +102,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DEL_BEHAVIOR";
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
@@ -104,6 +111,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_OVERWRITE";
             bindings = <&kp PERIOD>, <&kp COMMA>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
@@ -336,10 +344,10 @@
         layer_0 {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q                  &kp W                  &kp E                   &kp R                   &kp T                   &kp Y                   &kp U                   &kp I                 &kp O                  &kp P            &del_behavior
-&kp LSHFT  &kp A                  &kp S                  &kp D                   &kp F                   &kp G                   &kp H                   &kp J                   &kp K                 &kp L                  &kp SEMI         &kp SQT
-&kp LCTRL  &kp Z                  &kp X                  &kp C                   &kp V                   &kp B                   &kp N                   &kp M                   &kp COMMA             &dot_overwrite         &kp FSLH         &kp ESC
-                                      &kp LGUI            &smart_num_nav 2 5     &kp SPACE                                                   &lt 3 ENTER           &smart_sym_alt LEFT_ALT 1
+&kp TAB    &kp Q  &kp W  &kp E     &kp R               &kp T        &kp Y        &kp U                      &kp I      &kp O           &kp P     &del_behavior
+&kp LSHFT  &kp A  &kp S  &kp D     &kp F               &kp G        &kp H        &kp J                      &kp K      &kp L           &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V               &kp B        &kp N        &kp M                      &kp COMMA  &dot_overwrite  &kp FSLH  &kp ESC
+                         &kp LGUI  &smart_num_nav 2 5  &kp SPACE    &lt 3 ENTER  &smart_sym_alt LEFT_ALT 1
             >;
 
             sensor-bindings =
@@ -350,10 +358,10 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-&trans     &kp PLUS               &kp ASTRK              &kp TILDE               &none                   &trans                   &kp MINUS               &kp HASH                &kp AT                &kp CARET              &kp EQUAL        &trans
-&trans     &kp PIPE               &kp LBRC               &kp RBRC                &kp GRAVE               &kp FSLH                 &kp COLON               &kp QMARK               &kp LBKT              &kp RBKT               &kp DLLR         &trans
-&trans     &kp DQT                &kp LT                 &kp GT                  &kp EXCL                &kp BSLH                 &kp UNDER               &kp AMPS                &kp LPAR              &kp RPAR               &dot_overwrite   &trans
-                                      &trans              &trans                  &kp SPACE                                                   &kp ENTER              &trans
+&trans  &kp PLUS  &kp ASTRK  &kp TILDE  &none      &trans       &kp MINUS  &kp HASH   &kp AT    &kp CARET  &kp EQUAL       &trans
+&trans  &kp PIPE  &kp LBRC   &kp RBRC   &kp GRAVE  &kp FSLH     &kp COLON  &kp QMARK  &kp LBKT  &kp RBKT   &kp DLLR        &trans
+&trans  &kp DQT   &kp LT     &kp GT     &kp EXCL   &kp BSLH     &kp UNDER  &kp AMPS   &kp LPAR  &kp RPAR   &dot_overwrite  &trans
+                             &trans     &trans     &kp SPACE    &kp ENTER  &trans
             >;
 
             sensor-bindings =
@@ -364,10 +372,10 @@
         layer_2 {
             display-name = "NUMBERS";
             bindings = <
-&trans     &trans                 &trans                 &kp J                   &kp K                   &kp PRCNT                &trans                  &trans                  &kp MINUS             &trans                 &kp EQUAL        &kp BSPC
-&trans     &kp N1                 &kp N2                 &kp N3                  &kp N4                  &trans                   &trans                  &kp N7                  &kp N8                &kp N9                  &kp N0           &trans
-&trans     &kp DQT                &trans                 &kp LS(G)               &kp N5                  &kp V                    &kp W                   &kp N6                  &kp LPAR              &kp RPAR               &trans           &trans
-                                      &trans              &trans                  &kp SPACE                                                   &kp ENTER              &trans
+&trans  &trans   &trans  &kp J      &kp K   &kp PRCNT    &trans     &trans  &kp MINUS  &trans    &kp EQUAL  &kp BSPC
+&trans  &kp N1   &kp N2  &kp N3     &kp N4  &trans       &trans     &kp N7  &kp N8     &kp N9    &kp N0     &trans
+&trans  &kp DQT  &trans  &kp LS(G)  &kp N5  &kp V        &kp W      &kp N6  &kp LPAR   &kp RPAR  &trans     &trans
+                         &trans     &trans  &kp SPACE    &kp ENTER  &trans
             >;
 
             sensor-bindings =
@@ -378,10 +386,10 @@
         layer_3 {
             display-name = "FUNCTIONS";
             bindings = <
-&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &kp C_PREVIOUS          &kp C_NEXT              &kp C_VOLUME_DOWN     &kp C_VOLUME_UP        &kp C_MUTE       &kp C_PLAY_PAUSE
-&trans     &kp F1                 &kp F2                 &kp F3                  &kp F4                  &kp F6                   &trans                  &kp F8                  &kp F9                &kp F10                 &kp F11          &kp F12
-&trans     &bt BT_PRV             &bt BT_NXT             &trans                  &kp F5                  &trans                   &trans                  &kp F7                  &trans                &trans                  &trans           &trans
-                                      &trans              &trans                  &trans                                                      &mo 7                  &trans
+&trans  &trans      &trans      &trans  &trans  &trans    &kp C_PREVIOUS  &kp C_NEXT  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &kp C_PLAY_PAUSE
+&trans  &kp F1      &kp F2      &kp F3  &kp F4  &kp F6    &trans          &kp F8      &kp F9             &kp F10          &kp F11     &kp F12
+&trans  &bt BT_PRV  &bt BT_NXT  &trans  &kp F5  &trans    &trans          &kp F7      &trans             &trans           &trans      &trans
+                                &trans  &trans  &trans    &mo 7           &trans
             >;
 
             sensor-bindings =
@@ -392,50 +400,50 @@
         layer_4 {
             display-name = "MANAGER";
             bindings = <
-&trans     &trans                         &kp LA(SEMI)                        &mt (LA(LS(LBKT))) LA(LBKT)         &mt (LA(LS(RBKT))) LA(RBKT)         &trans                   &mt (LA(LS(O))) LA(O)  &mt (LA(LS(M))) LA(M)  &trans                 &trans                 &trans           &trans
-&trans     &mt (LA(LS(N1))) LA(N1)       &mt (LA(LS(N2))) LA(N2)            &mt (LA(LS(N3))) LA(N3)             &mt (LA(LS(N4))) LA(N4)             &mt (LS(LA(N9))) LA(N9)  &mt (LS(LA(H))) LA(H)  &mt (LA(LS(J))) LA(J)  &mt (LA(LS(K))) LA(K) &mt (LA(LS(L))) LA(L) &mt (LA(LS(T))) LA(T)  &trans
-&trans     &mt (LA(LS(N5))) LA(N5)       &mt (LA(LS(NUMBER_6))) LA(NUMBER_6) &mt (LA(LS(N7))) LA(N7)             &mt (LA(LS(N8))) LA(N8)             &trans                   &mt (LA(LS(R))) LA(Q)  &mt (LA(MINUS)) LA(X)  &mt (LA(PLUS)) LA(Y)  &mt (LA(I)) LA(P)      &trans           &trans
-                                           &trans                             &mo 6                               &trans                                                      &trans                 &trans
+&trans  &trans                 &kp LA(SEMI)                       &mt LA(LS(LBKT)) LA(LBKT)  &mt LA(LS(RBKT)) LA(RBKT)  &trans                   &mt LA(LS(O)) LA(O)  &mt LA(LS(M)) LA(M)  &trans               &trans               &trans               &trans
+&trans  &mt LA(LS(N1)) LA(N1)  &mt LA(LS(N2)) LA(N2)              &mt LA(LS(N3)) LA(N3)      &mt LA(LS(N4)) LA(N4)      &mt LS(LA(N9)) LA(N9)    &mt LS(LA(H)) LA(H)  &mt LA(LS(J)) LA(J)  &mt LA(LS(K)) LA(K)  &mt LA(LS(L)) LA(L)  &mt LA(LS(T)) LA(T)  &trans
+&trans  &mt LA(LS(N5)) LA(N5)  &mt LA(LS(NUMBER_6)) LA(NUMBER_6)  &mt LA(LS(N7)) LA(N7)      &mt LA(LS(N8)) LA(N8)      &trans                   &mt LA(LS(R)) LA(Q)  &mt LA(MINUS) LA(X)  &mt LA(PLUS) LA(Y)   &mt LA(I) LA(P)      &trans               &trans
+                                                                  &trans                     &mo 6                      &trans                   &trans               &trans
             >;
         };
 
         layer_5 {
             display-name = "NAV";
             bindings = <
-&trans     &kp LC(D)              &kp LC(F)              &kp LC(C)               &kp LC(V)               &trans                   &trans                  &kp END                 &kp HOME              &trans                 &trans           &trans
-&trans     &mt (LEFT_SHIFT) LC(A) &mkp RCLK              &mkp MCLK               &mkp LCLK               &trans                   &kp LEFT                &kp DOWN                &kp UP                &kp RIGHT              &trans           &trans
-&trans     &trans                 &trans                 &kp LC(LS(TAB))         &kp LC(TAB)             &trans                   &trans                  &kp PG_DN               &kp PG_UP             &trans                 &trans           &trans
-                                      &trans              &trans                  &trans                                                      &mo 4                  &trans
+&trans  &kp LC(D)             &kp LC(F)  &kp LC(C)        &kp LC(V)    &trans    &trans    &kp END    &kp HOME   &trans     &trans  &trans
+&trans  &mt LEFT_SHIFT LC(A)  &mkp RCLK  &mkp MCLK        &mkp LCLK    &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &trans                &trans     &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &trans    &kp PG_DN  &kp PG_UP  &trans     &trans  &trans
+                                         &trans           &trans       &trans    &mo 4     &trans
             >;
         };
 
         layer_6 {
             display-name = "STACK";
             bindings = <
-&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &trans                  &trans                  &trans                &trans                 &trans           &trans
-&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &kp LA(LEFT)            &kp LA(DOWN)            &kp LA(UP)            &kp LA(RIGHT)          &trans           &trans
-&trans     &trans                 &trans                 &trans                  &trans                  &trans                   &trans                  &trans                  &trans                &trans                 &trans           &trans
-                                      &trans              &trans                  &trans                                                      &trans                 &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans      &trans         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans      &trans         &trans  &trans
+                        &trans  &trans  &trans    &trans        &trans
             >;
         };
 
         layer_7 {
             display-name = "UTIL";
             bindings = <
-&out OUT_TOG                      &bt BT_PRV       &bt BT_NXT       &none            &none            &none                   &none      &none         &none         &none         &none         &none
-&rgb_ug RGB_COLOR_HSB(256,64,46)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF         &none      &none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&rgb_ug RGB_COLOR_HSB(202,73,53)  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD         &bt BT_SEL 0 &none       &none         &none         &none         &tog 7
-                                                                    &none            &none            &none                                          &none         &none
+&out OUT_TOG                      &bt BT_PRV       &bt BT_NXT       &none            &none            &none              &none         &none  &none         &none         &none         &none
+&rgb_ug RGB_COLOR_HSB(256,64,46)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF    &none         &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&rgb_ug RGB_COLOR_HSB(202,73,53)  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD    &bt BT_SEL 0  &none  &none         &none         &none         &tog 7
+                                                                    &none            &none            &none              &none         &none
             >;
         };
 
         layer_8 {
             display-name = "MOUSE";
             bindings = <
-&trans     &msc SCRL_LEFT          &msc SCRL_UP           &msc SCRL_DOWN          &msc SCRL_RIGHT         &trans                  &trans                  &trans                  &trans                &trans                 &trans           &trans
-&trans     &mkp MB4                &mkp RCLK              &mkp MCLK               &mkp LCLK               &mkp MB5                &trans                  &trans                  &trans                &trans                 &trans           &trans
-&trans     &mmv MOVE_LEFT          &mmv MOVE_DOWN         &mmv MOVE_UP            &mmv MOVE_RIGHT         &trans                  &trans                  &trans                  &trans                &trans                 &trans           &trans
-                                      &trans              &trans                  &trans                                                      &trans                 &trans
+&trans  &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB4        &mkp RCLK       &mkp MCLK       &mkp LCLK        &mkp MB5     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &none           &none            &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                                        &mkp LCLK       &mkp MCLK        &mkp RCLK    &trans  &trans
             >;
         };
     };
