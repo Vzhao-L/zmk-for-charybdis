@@ -294,3 +294,69 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+combos:
+- p: [1, 14, 25]
+  k: '&soft_off'
+- p: [37, 40]
+  k: '&caps_word'
+  l: [QWERTY]
+- p: [4, 5]
+  k: (
+  l: [QWERTY]
+- p: [17, 16]
+  k: '['
+  l: [QWERTY]
+- p: [29, 28]
+  k: '{'
+  l: [QWERTY]
+- p: [6, 7]
+  k: )
+  l: [QWERTY]
+- p: [19, 18]
+  k: ']'
+  l: [QWERTY]
+- p: [30, 31]
+  k: '}'
+  l: [QWERTY]
+- p: [1, 2]
+  k: ESC
+  l: [QWERTY]
+- p: [0, 12]
+  k: '&sys_reset'
+  l: [FUNCTIONS]
+- p: [12, 24]
+  k: '&bootloader'
+  l: [FUNCTIONS]
+- p: [11, 23]
+  k: '&sys_reset'
+  l: [FUNCTIONS]
+- p: [11, 35]
+  k: '&bootloader'
+  l: [FUNCTIONS]
+- p: [4, 3, 2]
+  k: BT CLR ALL
+  l: [FUNCTIONS]
+- p: [14, 15, 16]
+  k: BT CLR
+  l: [FUNCTIONS]
+- p: [2, 3]
+  k: Q
+  l: [QWERTY]
+- p: [3, 4]
+  k: Z
+  l: [QWERTY]
+- p: [2, 3, 4]
+  k: DEL
+  l: [QWERTY]
+- p: [4, 16]
+  k: '&gth'
+  l: [QWERTY]
+- p: [16, 28]
+  k: '&lth'
+  l: [QWERTY]
+- p: [7, 19]
+  k: '&h_tag'
+- p: [8, 20]
+  k: '&arrow'
+- p: [15, 20]
+  k: '&win_word 4'
