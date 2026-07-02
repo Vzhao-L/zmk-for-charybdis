@@ -109,6 +109,15 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        mouse_slow {
+            layers = <9>;
+            input-processors = <&zip_xy_scaler 1 2>;
+        };
+
+        mouse_fast {
+            layers = <10>;
+            input-processors = <&zip_xy_scaler 2 1>;
+        };
     };
 };
-
