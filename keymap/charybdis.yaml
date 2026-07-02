@@ -172,37 +172,37 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Alt+;
-  - {t: 'Alt+[', h: (LA(LS(LBKT)))}
-  - {t: 'Alt+]', h: (LA(LS(RBKT)))}
+  - {t: 'Alt+[', h: 'Alt+Sft+['}
+  - {t: 'Alt+]', h: 'Alt+Sft+]'}
   - {t: ▽, type: trans}
-  - {t: Alt+O, h: (LA(LS(O)))}
-  - {t: Alt+M, h: (LA(LS(M)))}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: Alt+O, h: Alt+Sft+O}
+  - {t: Alt+M, h: Alt+Sft+M}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Alt+1, h: (LA(LS(1)))}
-  - {t: Alt+2, h: (LA(LS(2)))}
-  - {t: Alt+3, h: (LA(LS(3)))}
-  - {t: Alt+4, h: (LA(LS(4)))}
-  - {t: Alt+9, h: (LS(LA(9)))}
-  - {t: Alt+H, h: (LS(LA(H)))}
-  - {t: Alt+J, h: (LA(LS(J)))}
-  - {t: Alt+K, h: (LA(LS(K)))}
-  - {t: Alt+L, h: (LA(LS(L)))}
-  - {t: Alt+T, h: (LA(LS(T)))}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Alt+5, h: (LA(LS(5)))}
-  - {t: Alt+6, h: (LA(LS(6)))}
-  - {t: Alt+7, h: (LA(LS(7)))}
-  - {t: Alt+8, h: (LA(LS(8)))}
+  - {t: Alt+1, h: Alt+Sft+1}
+  - {t: Alt+2, h: Alt+Sft+2}
+  - {t: Alt+3, h: Alt+Sft+3}
+  - {t: Alt+4, h: Alt+Sft+4}
+  - {t: Alt+9, h: Sft+Alt+9}
+  - {t: Alt+H, h: Sft+Alt+H}
+  - {t: Alt+J, h: Alt+Sft+J}
+  - {t: Alt+K, h: Alt+Sft+K}
+  - {t: Alt+L, h: Alt+Sft+L}
+  - {t: Alt+T, h: Alt+Sft+T}
   - {t: ▽, type: trans}
-  - {t: Alt+Q, h: (LA(LS(R)))}
-  - {t: Alt+X, h: (LA(MINUS))}
-  - {t: Alt+Y, h: (LA(PLUS))}
-  - {t: Alt+P, h: (LA(I))}
+  - {t: ▽, type: trans}
+  - {t: Alt+5, h: Alt+Sft+5}
+  - {t: Alt+6, h: Alt+Sft+6}
+  - {t: Alt+7, h: Alt+Sft+7}
+  - {t: Alt+8, h: Alt+Sft+8}
+  - {t: ▽, type: trans}
+  - {t: Alt+Q, h: Alt+Sft+R}
+  - {t: Alt+X, h: Alt+-}
+  - {t: Alt+Y, h: Alt++}
+  - {t: Alt+P, h: Alt+I}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -224,7 +224,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Ctl+A, h: (LEFT SHIFT)}
+  - {t: Ctl+A, h: LEFT SHIFT}
   - '&mkp RCLK'
   - '&mkp MCLK'
   - '&mkp LCLK'
@@ -364,8 +364,8 @@ layers:
   - {t: ▽, type: trans}
   - '&mmv MOVE_LEFT'
   - '&mmv MOVE_DOWN'
-  - '&mmv MOVE_UP'
-  - '&mmv MOVE_RIGHT'
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -373,9 +373,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
