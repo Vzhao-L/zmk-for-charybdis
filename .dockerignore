@@ -1,0 +1,5 @@
+.git
+.west
+build
+modules
+zmk

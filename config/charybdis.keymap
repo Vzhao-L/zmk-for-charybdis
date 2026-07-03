@@ -56,7 +56,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&nav_word>, <&num_word>;
+            bindings = <&nav_word>, <&num_word_backspace>;
 
             display-name = "Smart Num/Nav";
         };
@@ -68,6 +68,20 @@
             ignore-modifiers;
         };
 
+        num_word_backspace: num_word_backspace {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <
+                N1 N2 N3 N4 N5 N6 N7 N8 N9 N0
+                NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5
+                NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0
+                PLUS MINUS ASTERISK SLASH PRCNT EQUAL COLON
+                LPAR RPAR LEFT_PARENTHESIS RIGHT_PARENTHESIS
+                DQT BACKSPACE BSPC
+            >;
+            ignore-modifiers;
+        };
+
         sym_word: sym_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <1>;
@@ -76,7 +90,7 @@
                 PLUS MINUS EQUAL UNDER
                 LESS_THAN GREATER_THAN SEMICOLON COLON SLASH QMARK SQT DQT
                 LEFT_BRACKET RIGHT_BRACKET LEFT_BRACE RIGHT_BRACE
-                BACKSLASH PIPE GRAVE TILDE
+                BACKSLASH PIPE GRAVE TILDE BACKSPACE BSPC
             >;
 
             ignore-modifiers;
@@ -92,7 +106,7 @@
                 H J K L T
                 Q P I
                 X Y
-                MINUS PLUS
+                MINUS PLUS BACKSPACE BSPC
             >;
 
             ignore-modifiers;
@@ -360,8 +374,8 @@
             bindings = <
 &trans  &kp PLUS  &kp ASTRK  &kp TILDE  &none      &trans       &kp MINUS  &kp HASH   &kp AT    &kp CARET  &kp EQUAL       &trans
 &trans  &kp PIPE  &kp LBRC   &kp RBRC   &kp GRAVE  &kp FSLH     &kp COLON  &kp QMARK  &kp LBKT  &kp RBKT   &kp DLLR        &trans
-&trans  &kp DQT   &kp LT     &kp GT     &kp EXCL   &kp BSLH     &kp UNDER  &kp AMPS   &kp LPAR  &kp RPAR   &dot_overwrite  &trans
-                             &trans     &trans     &kp SPACE    &kp ENTER  &trans
+&trans  &kp DQT   &kp LT     &kp GT     &kp EXCL   &kp BSLH     &kp UNDER  &kp AMPS   &kp LPAR  &kp RPAR   &dot_overwrite  &tog 1
+                             &trans     &tog 1     &kp SPACE    &kp ENTER  &trans
             >;
 
             sensor-bindings =
@@ -374,8 +388,8 @@
             bindings = <
 &trans  &kp PLUS  &kp ASTERISK  &kp J      &kp K   &kp PRCNT    &kp MINUS  &trans  &kp MINUS  &trans    &kp EQUAL  &kp BSPC
 &trans  &kp N1    &kp N2        &kp N3     &kp N4  &kp SLASH    &kp COLON  &kp N7  &kp N8     &kp N9    &kp N0     &trans
-&trans  &kp DQT   &trans        &kp LS(G)  &kp N5  &kp V        &kp W      &kp N6  &kp LPAR   &kp RPAR  &trans     &trans
-                                &trans     &trans  &kp SPACE    &kp ENTER  &trans
+&trans  &kp DQT   &trans        &kp LS(G)  &kp N5  &kp V        &kp W      &kp N6  &kp LPAR   &kp RPAR  &trans     &tog 2
+                                &trans     &tog 2  &kp SPACE    &kp ENTER  &trans
             >;
 
             sensor-bindings =
@@ -402,8 +416,8 @@
             bindings = <
 &trans  &trans                 &kp LA(SEMI)                       &mt LA(LS(LBKT)) LA(LBKT)  &mt LA(LS(RBKT)) LA(RBKT)  &trans                   &mt LA(LS(O)) LA(O)  &mt LA(LS(M)) LA(M)  &trans               &trans               &trans               &trans
 &trans  &mt LA(LS(N1)) LA(N1)  &mt LA(LS(N2)) LA(N2)              &mt LA(LS(N3)) LA(N3)      &mt LA(LS(N4)) LA(N4)      &mt LS(LA(N9)) LA(N9)    &mt LS(LA(H)) LA(H)  &mt LA(LS(J)) LA(J)  &mt LA(LS(K)) LA(K)  &mt LA(LS(L)) LA(L)  &mt LA(LS(T)) LA(T)  &trans
-&trans  &mt LA(LS(N5)) LA(N5)  &mt LA(LS(NUMBER_6)) LA(NUMBER_6)  &mt LA(LS(N7)) LA(N7)      &mt LA(LS(N8)) LA(N8)      &trans                   &mt LA(LS(R)) LA(Q)  &mt LA(MINUS) LA(X)  &mt LA(PLUS) LA(Y)   &mt LA(I) LA(P)      &trans               &trans
-                                                                  &trans                     &mo 6                      &trans                   &trans               &trans
+&trans  &mt LA(LS(N5)) LA(N5)  &mt LA(LS(NUMBER_6)) LA(NUMBER_6)  &mt LA(LS(N7)) LA(N7)      &mt LA(LS(N8)) LA(N8)      &trans                   &mt LA(LS(R)) LA(Q)  &mt LA(MINUS) LA(X)  &mt LA(PLUS) LA(Y)   &mt LA(I) LA(P)      &trans               &tog 4
+                                                                  &trans                     &tog 4                     &trans                   &trans               &trans
             >;
         };
 
@@ -412,8 +426,8 @@
             bindings = <
 &trans  &kp LC(D)             &kp LC(F)  &kp LC(C)        &kp LC(V)    &trans    &trans    &kp END    &kp HOME   &trans     &trans  &trans
 &trans  &mt LEFT_SHIFT LC(A)  &mkp RCLK  &mkp MCLK        &mkp LCLK    &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans  &trans                &trans     &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &trans    &kp PG_DN  &kp PG_UP  &trans     &trans  &trans
-                                         &trans           &trans       &trans    &mo 4     &trans
+&trans  &trans                &trans     &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &trans    &kp PG_DN  &kp PG_UP  &trans     &trans  &tog 5
+                                         &trans           &tog 5       &trans    &mo 4     &trans
             >;
         };
 
@@ -442,7 +456,7 @@
             bindings = <
 &trans  &trans  &trans          &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans          &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_DOWN  &mo 10     &mo 9      &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mo 11          &mo 10     &mo 9      &trans       &trans  &trans  &trans  &trans  &trans  &trans
                                 &mkp LCLK  &mkp MCLK  &mkp RCLK    &trans  &trans
             >;
         };
@@ -459,6 +473,16 @@
 
         layer_10 {
             display-name = "MOUSE+";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+            >;
+        };
+
+        layer_11 {
+            display-name = "MOUSE-SCROLL";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
