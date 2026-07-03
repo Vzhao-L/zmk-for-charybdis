@@ -138,6 +138,7 @@
             bindings = <&kp &sym_word>;
             display-name = "Smart Sym/Alt";
         };
+
     };
 
     combos {
@@ -350,6 +351,20 @@
             bindings = <&kp POUND>;
             label = "H_TAG";
         };
+
+        v_split: v_split {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(B) &kp PRCNT>;
+            label = "V_SPLIT";
+        };
+
+        h_split: h_split {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(B) &kp DQT>;
+            label = "H_SPLIT";
+        };
     };
 
     keymap {
@@ -424,9 +439,9 @@
         layer_5 {
             display-name = "NAV";
             bindings = <
-&trans  &kp LC(D)             &kp LC(F)  &kp LC(C)        &kp LC(V)    &trans    &trans    &kp END    &kp HOME   &trans     &trans  &trans
-&trans  &mt LEFT_SHIFT LC(A)  &mkp RCLK  &mkp MCLK        &mkp LCLK    &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans  &trans                &trans     &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &trans    &kp PG_DN  &kp PG_UP  &trans     &trans  &tog 5
+&trans  &mt LC(LS(D)) LC(D)    &h_split   &v_split         &trans                 &trans    &trans    &kp END    &kp HOME   &trans     &trans  &trans
+&trans  &mt LC(LS(A)) LC(A)    &mt LC(LS(F)) LC(F)         &mt LC(LS(C)) LC(C)    &mt LC(LS(V)) LC(V)  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &trans                 &trans     &trans           &mt LC(LS(TAB)) LC(TAB)  &trans    &trans    &kp PG_DN  &kp PG_UP  &trans     &trans  &tog 5
                                          &trans           &tog 5       &trans    &mo 4     &trans
             >;
         };
@@ -456,7 +471,7 @@
             bindings = <
 &trans  &trans  &trans          &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans          &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mo 11          &mo 10     &mo 9      &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mo 11          &mo 10     &mo 9      &trans       &trans  &trans  &trans  &trans  &trans  &to 0
                                 &mkp LCLK  &mkp MCLK  &mkp RCLK    &trans  &trans
             >;
         };
@@ -466,7 +481,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &to 0
                         &trans  &trans  &trans    &trans  &trans
             >;
         };
@@ -476,7 +491,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &to 0
                         &trans  &trans  &trans    &trans  &trans
             >;
         };
@@ -486,7 +501,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &to 0
                         &trans  &trans  &trans    &trans  &trans
             >;
         };
