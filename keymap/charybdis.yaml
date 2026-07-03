@@ -531,9 +531,18 @@ combos:
 - p: [1, 2]
   k: ESC
   l: [QWERTY]
-- p: [0, 12]
+- p: [0, 5, 37]
   k: {t: UTIL, h: toggle}
-  l: [SYMBOLS]
+  l: [QWERTY]
+- p: [6, 11, 40]
+  k: {t: UTIL, h: toggle}
+  l: [QWERTY]
+- p: [0, 5, 37]
+  k: {t: UTIL, h: toggle}
+  l: [UTIL]
+- p: [6, 11, 40]
+  k: {t: UTIL, h: toggle}
+  l: [UTIL]
 - p: [2, 3, 4]
   k: '&shrug'
   l: [SYMBOLS]
