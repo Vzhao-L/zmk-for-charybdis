@@ -197,10 +197,28 @@
             layers = <0>;
         };
 
-        to_util {
+        to_util_left {
             bindings = <&tog 7>;
-            key-positions = <0 12>;
-            layers = <1>;
+            key-positions = <0 5 37>;
+            layers = <0>;
+        };
+
+        to_util_right {
+            bindings = <&tog 7>;
+            key-positions = <6 11 40>;
+            layers = <0>;
+        };
+
+        from_util_left {
+            bindings = <&tog 7>;
+            key-positions = <0 5 37>;
+            layers = <7>;
+        };
+
+        from_util_right {
+            bindings = <&tog 7>;
+            key-positions = <6 11 40>;
+            layers = <7>;
         };
 
         shrug_combo {
