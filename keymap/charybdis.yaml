@@ -212,10 +212,10 @@ layers:
   - {t: ▽, type: trans}
   NAV:
   - {t: ▽, type: trans}
-  - Ctl+D
-  - Ctl+F
-  - Ctl+C
-  - Ctl+V
+  - {t: Ctl+D, h: Ctl+Sft+D}
+  - '&h_split'
+  - '&v_split'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - END
@@ -224,10 +224,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Ctl+A, h: LEFT SHIFT}
-  - '&mkp RCLK'
-  - '&mkp MCLK'
-  - '&mkp LCLK'
+  - {t: Ctl+A, h: Ctl+Sft+A}
+  - {t: Ctl+F, h: Ctl+Sft+F}
+  - {t: Ctl+C, h: Ctl+Sft+C}
+  - {t: Ctl+V, h: Ctl+Sft+V}
   - {t: ▽, type: trans}
   - LEFT
   - DOWN
@@ -238,8 +238,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+Sft+TAB
-  - Ctl+TAB
+  - {t: ▽, type: trans}
+  - {t: Ctl+TAB, h: Ctl+Sft+TAB}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG DN
@@ -372,7 +372,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: QWERTY, h: toggle}
   - '&mkp LCLK'
   - '&mkp MCLK'
   - '&mkp RCLK'
@@ -414,7 +414,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -456,7 +456,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -498,7 +498,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
