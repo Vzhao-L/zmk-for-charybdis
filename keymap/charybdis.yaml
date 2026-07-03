@@ -166,7 +166,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: UTIL, type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   MANAGER:
   - {t: ▽, type: trans}
@@ -334,7 +334,7 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
+  - ''
   - ''
   MOUSE:
   - {t: ▽, type: trans}
@@ -531,6 +531,12 @@ combos:
 - p: [1, 2]
   k: ESC
   l: [QWERTY]
+- p: [0, 12]
+  k: {t: UTIL, h: toggle}
+  l: [SYMBOLS]
+- p: [2, 3, 4]
+  k: '&shrug'
+  l: [SYMBOLS]
 - p: [0, 12]
   k: '&sys_reset'
   l: [UTIL]
