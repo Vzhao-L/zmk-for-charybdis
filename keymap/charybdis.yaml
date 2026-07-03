@@ -38,7 +38,7 @@ layers:
   - /
   - ESC
   - LGUI
-  - {t: '&num_word 5', h: '&nav_word 2'}
+  - {t: '&num_word_backspace 5', h: '&nav_word 2'}
   - SPACE
   - {t: ENTER, h: FUNCTIONS}
   - {t: '&sym_word 1', h: LEFT ALT}
@@ -78,9 +78,9 @@ layers:
   - (
   - )
   - {t: ., s: ','}
+  - {t: SYMBOLS, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: SYMBOLS, h: toggle}
   - SPACE
   - ENTER
   - {t: ▽, type: trans}
@@ -120,9 +120,9 @@ layers:
   - (
   - )
   - {t: ▽, type: trans}
+  - {t: NUMBERS, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: NUMBERS, h: toggle}
   - SPACE
   - ENTER
   - {t: ▽, type: trans}
@@ -204,9 +204,9 @@ layers:
   - {t: Alt+Y, h: Alt++}
   - {t: Alt+P, h: Alt+I}
   - {t: ▽, type: trans}
+  - {t: MANAGER, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - STACK
+  - {t: MANAGER, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -246,9 +246,9 @@ layers:
   - PG UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: NAV, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: NAV, h: toggle}
   - {t: ▽, type: trans}
   - MANAGER
   - {t: ▽, type: trans}
@@ -290,7 +290,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -363,7 +363,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mmv MOVE_DOWN'
+  - MOUSE-SCROLL
   - MOUSE+
   - MOUSE-
   - {t: ▽, type: trans}
@@ -449,6 +449,48 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  MOUSE-SCROLL:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
