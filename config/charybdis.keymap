@@ -440,10 +440,10 @@
         layer_8 {
             display-name = "MOUSE";
             bindings = <
-&trans  &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mkp MB4        &mkp RCLK       &mkp MCLK       &mkp LCLK        &mkp MB5     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mo 9           &mo 10           &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                                        &mkp LCLK       &mkp MCLK        &mkp RCLK    &trans  &trans
+&trans  &trans  &trans          &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans          &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mmv MOVE_DOWN  &mo 10     &mo 9      &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                                &mkp LCLK  &mkp MCLK  &mkp RCLK    &trans  &trans
             >;
         };
 
