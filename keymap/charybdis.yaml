@@ -250,7 +250,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: NAV, h: toggle}
   - {t: ▽, type: trans}
-  - MANAGER
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   STACK:
   - {t: ▽, type: trans}
