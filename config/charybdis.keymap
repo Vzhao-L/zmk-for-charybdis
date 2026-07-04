@@ -56,7 +56,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&nav_word>, <&num_word_backspace>;
+            bindings = <&num_word_backspace>, <&nav_word>;
 
             display-name = "Smart Num/Nav";
         };
