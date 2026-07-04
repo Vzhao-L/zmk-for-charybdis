@@ -531,6 +531,27 @@ combos:
 - p: [1, 2]
   k: ESC
   l: [QWERTY]
+- p: [3, 15]
+  k: AltGr+E
+  l: [QWERTY]
+- p: [19, 20]
+  k: AltGr+J
+  l: [QWERTY]
+- p: [6, 18]
+  k: AltGr+H
+  l: [QWERTY]
+- p: [25, 26]
+  k: AltGr+Z
+  l: [QWERTY]
+- p: [29, 30]
+  k: AltGr+B
+  l: [QWERTY]
+- p: [7, 8]
+  k: AltGr+U
+  l: [QWERTY]
+- p: [9, 10]
+  k: AltGr+O
+  l: [QWERTY]
 - p: [0, 5, 37]
   k: {t: UTIL, h: toggle}
   l: [QWERTY]
