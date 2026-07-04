@@ -313,45 +313,7 @@
         shrug: shrug {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <20>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp N0 &kp N0 &kp A &kp F &kp SPC>,
-                <&macro_tap>,
-                <&kp BACKSLASH>,
-                <&macro_tap>,
-                <&kp UNDER>,
-                <&macro_tap>,
-                <&kp LPAR>,
-                <&macro_press>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp N3 &kp N0 &kp C &kp N4 &kp SPC>,
-                <&macro_tap>,
-                <&kp RPAR>,
-                <&macro_tap>,
-                <&kp UNDER>,
-                <&macro_tap>,
-                <&kp FSLH>,
-                <&macro_press>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp N0 &kp N0 &kp A &kp F &kp SPC>;
+            bindings = <&macro_tap &kp SEMI &kp S &kp H &kp R &kp U &kp G>;
         };
 
         gth: gth {
