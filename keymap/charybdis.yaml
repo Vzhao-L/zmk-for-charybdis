@@ -38,7 +38,7 @@ layers:
   - /
   - ESC
   - LGUI
-  - {t: '&num_word_backspace 5', h: '&nav_word 2'}
+  - {t: '&nav_word 5', h: '&num_word_backspace 2'}
   - SPACE
   - {t: ENTER, h: FUNCTIONS}
   - {t: '&sym_word 1', h: LEFT ALT}
