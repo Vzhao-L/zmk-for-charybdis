@@ -197,6 +197,48 @@
             layers = <0>;
         };
 
+        ru_e {
+            bindings = <&kp RA(E)>;
+            key-positions = <3 15>;
+            layers = <0>;
+        };
+
+        ru_zhe {
+            bindings = <&kp RA(J)>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        ru_ha {
+            bindings = <&kp RA(H)>;
+            key-positions = <6 18>;
+            layers = <0>;
+        };
+
+        ru_hard_sign {
+            bindings = <&kp RA(Z)>;
+            key-positions = <25 26>;
+            layers = <0>;
+        };
+
+        ru_be {
+            bindings = <&kp RA(B)>;
+            key-positions = <29 30>;
+            layers = <0>;
+        };
+
+        ru_yu {
+            bindings = <&kp RA(U)>;
+            key-positions = <7 8>;
+            layers = <0>;
+        };
+
+        ru_io {
+            bindings = <&kp RA(O)>;
+            key-positions = <9 10>;
+            layers = <0>;
+        };
+
         to_util_left {
             bindings = <&tog 7>;
             key-positions = <0 5 37>;
