@@ -585,3 +585,5 @@ combos:
   k: '&arrow'
 - p: [15, 20]
   k: '&win_word 4'
+- p: [20, 21]
+  k: BACKSPACE
