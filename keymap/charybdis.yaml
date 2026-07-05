@@ -34,7 +34,7 @@ layers:
   - N
   - M
   - ','
-  - {t: ., s: ','}
+  - .
   - /
   - ESC
   - LGUI
@@ -44,40 +44,40 @@ layers:
   - {t: '&sym_word 1', h: LEFT ALT}
   SYMBOLS:
   - {t: ▽, type: trans}
-  - +
-  - '*'
-  - '~'
+  - AltGr+Sft+=
+  - AltGr+8
+  - AltGr+Sft+`
   - ''
   - {t: ▽, type: trans}
-  - '-'
-  - '#'
-  - '@'
-  - ^
-  - '='
+  - AltGr+-
+  - AltGr+3
+  - AltGr+2
+  - AltGr+6
+  - AltGr+=
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '|'
-  - '{'
-  - '}'
-  - '`'
-  - /
-  - ':'
-  - '?'
-  - '['
-  - ']'
-  - $
+  - AltGr+Sft+\
+  - AltGr+[
+  - AltGr+]
+  - AltGr+`
+  - AltGr+/
+  - AltGr+Sft+;
+  - AltGr+Sft+/
+  - AltGr+[
+  - AltGr+]
+  - AltGr+4
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '"'
-  - <
-  - '>'
-  - '!'
-  - \
-  - _
-  - '&'
-  - (
-  - )
-  - {t: ., s: ','}
+  - AltGr+Sft+'
+  - AltGr+,
+  - AltGr+.
+  - AltGr+1
+  - AltGr+\
+  - AltGr+Sft+-
+  - AltGr+7
+  - AltGr+9
+  - AltGr+0
+  - AltGr+/
   - {t: SYMBOLS, h: toggle}
   - {t: ▽, type: trans}
   - {t: SYMBOLS, h: toggle}
@@ -530,27 +530,6 @@ combos:
   l: [QWERTY]
 - p: [1, 2]
   k: ESC
-  l: [QWERTY]
-- p: [3, 15]
-  k: AltGr+E
-  l: [QWERTY]
-- p: [19, 20]
-  k: AltGr+J
-  l: [QWERTY]
-- p: [6, 18]
-  k: AltGr+H
-  l: [QWERTY]
-- p: [25, 26]
-  k: AltGr+Z
-  l: [QWERTY]
-- p: [29, 30]
-  k: AltGr+B
-  l: [QWERTY]
-- p: [7, 8]
-  k: AltGr+U
-  l: [QWERTY]
-- p: [9, 10]
-  k: AltGr+O
   l: [QWERTY]
 - p: [0, 5, 37]
   k: {t: UTIL, h: toggle}
