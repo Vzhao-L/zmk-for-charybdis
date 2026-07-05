@@ -44,16 +44,16 @@ layers:
   - {t: '&sym_word 1', h: LEFT ALT}
   SYMBOLS:
   - {t: ▽, type: trans}
-  - AltGr+Sft+=
-  - AltGr+8
+  - +
+  - '*'
   - AltGr+Sft+`
   - ''
   - {t: ▽, type: trans}
-  - AltGr+-
+  - '-'
   - AltGr+3
   - AltGr+2
   - AltGr+6
-  - AltGr+=
+  - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - AltGr+Sft+\
@@ -71,12 +71,12 @@ layers:
   - AltGr+Sft+'
   - AltGr+,
   - AltGr+.
-  - AltGr+1
-  - AltGr+\
-  - AltGr+Sft+-
+  - '!'
+  - \
+  - _
   - AltGr+7
-  - AltGr+9
-  - AltGr+0
+  - (
+  - )
   - AltGr+/
   - {t: SYMBOLS, h: toggle}
   - {t: ▽, type: trans}
