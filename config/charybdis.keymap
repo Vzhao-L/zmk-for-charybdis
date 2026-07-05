@@ -381,9 +381,9 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-&trans  &kp RA(LS(EQUAL))  &kp RA(N8)        &kp RA(LS(GRAVE))  &none       &trans          &kp RA(MINUS)      &kp RA(N3)    &kp RA(N2)    &kp RA(N6)      &kp RA(EQUAL)  &trans
+&trans  &kp PLUS           &kp ASTRK         &kp RA(LS(GRAVE))  &none       &trans          &kp MINUS          &kp RA(N3)    &kp RA(N2)    &kp RA(N6)      &kp EQUAL     &trans
 &trans  &kp RA(LS(BSLH))   &kp RA(LBKT)      &kp RA(RBKT)       &kp RA(GRAVE)  &kp RA(FSLH)  &kp RA(LS(SEMI))  &kp RA(LS(FSLH))  &kp RA(LBKT)  &kp RA(RBKT)  &kp RA(N4)     &trans
-&trans  &kp RA(LS(SQT))    &kp RA(COMMA)     &kp RA(PERIOD)     &kp RA(N1)  &kp RA(BSLH)    &kp RA(LS(MINUS))  &kp RA(N7)    &kp RA(N9)    &kp RA(N0)      &kp RA(FSLH)   &tog 1
+&trans  &kp RA(LS(SQT))    &kp RA(COMMA)     &kp RA(PERIOD)     &kp EXCL    &kp BSLH        &kp UNDER          &kp RA(N7)    &kp LPAR      &kp RPAR        &kp RA(FSLH)   &tog 1
                                           &trans                &tog 1      &kp SPACE       &kp ENTER          &trans
             >;
 
