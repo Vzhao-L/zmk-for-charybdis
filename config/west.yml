@@ -26,7 +26,7 @@ manifest:
       revision: main
     - name: zmk-yasb
       remote: senyasdt
-      revision: 8b21f299f427b9f1ad151dfe4315ca5ce0341652
+      revision: b32d06776d6e6e518ebd051c5afec8eb876cfb8e
       
   self:
     path: config
