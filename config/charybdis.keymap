@@ -310,7 +310,12 @@
 
         bksp_new {
             bindings = <&kp BACKSPACE>;
-            key-positions = <20 21>;
+            key-positions = <32 33>;
+        };
+
+        to0 {
+            bindings = <&to 0>;
+            key-positions = <26 27>;
         };
     };
 
