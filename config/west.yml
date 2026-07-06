@@ -6,6 +6,10 @@ manifest:
       url-base: https://github.com/DoctorWangWang
     - name: urob
       url-base: https://github.com/urob
+    - name: zzeneg
+      url-base: https://github.com/zzeneg
+    - name: senyasdt
+      url-base: https://github.com/senyasdt
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,6 +21,12 @@ manifest:
     - name: zmk-auto-layer
       remote: urob
       revision: v0.3
+    - name: zmk-raw-hid
+      remote: zzeneg
+      revision: main
+    - name: zmk-yasb
+      remote: senyasdt
+      revision: main
       
   self:
     path: config
