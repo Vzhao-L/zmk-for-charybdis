@@ -250,7 +250,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: NAV, h: toggle}
   - {t: ▽, type: trans}
-  - MANAGER
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   STACK:
   - {t: ▽, type: trans}
@@ -585,3 +585,7 @@ combos:
   k: '&arrow'
 - p: [15, 20]
   k: '&win_word 4'
+- p: [32, 33]
+  k: BACKSPACE
+- p: [26, 27]
+  k: {t: QWERTY, h: toggle}
