@@ -585,5 +585,7 @@ combos:
   k: '&arrow'
 - p: [15, 20]
   k: '&win_word 4'
-- p: [20, 21]
+- p: [32, 33]
   k: BACKSPACE
+- p: [26, 27]
+  k: {t: QWERTY, h: toggle}
