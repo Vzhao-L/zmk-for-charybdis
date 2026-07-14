@@ -119,7 +119,7 @@
 &kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6        &kp F7     &kp F8    &kp F9      &kp F10            &kp F11  &kp DELETE
 &kp CAPS        &none            &none            &none            &none            &bt BT_CLR    &kp C_PP   &none     &kp UP      &kp C_MUTE         &kp C_VOL_DN      &kp C_VOL_UP
 &kp LEFT_SHIFT  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4  &none      &kp LEFT  &kp DOWN    &kp RIGHT          &none             &none
-&kp LCTRL       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none         &kp SQT    &kp BSLH  &kp PERIOD  &kp RIGHT_BRACKET  &kp NON_US_BSLH   &kp MINUS
+&kp LCTRL       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none         &kp SQT    &kp BSLH  &kp PERIOD  &kp RIGHT_BRACKET  &kp NON_US_BSLH   &kp EQUAL
                                                   &kp LEFT_ALT     &kp SPACE        &to 0         &none      &none
                                                                    &mkp MB1         &mkp MB2      &kp ENTER
             >;
