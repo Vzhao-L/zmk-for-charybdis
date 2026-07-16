@@ -1,0 +1,4 @@
+config CHARYBDIS_PMW3610_PERIPHERAL_KEYMAP_STUBS
+    bool "PMW3610 keymap stubs for Charybdis split peripheral"
+    default y if SHIELD_CHARYBDIS_RIGHT_PERIPHERAL
+    depends on PMW3610 && ZMK_SPLIT && !ZMK_SPLIT_ROLE_CENTRAL

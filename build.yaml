@@ -20,4 +20,8 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_RAW_HID=y -DCONFIG_RAW_HID_USAGE_PAGE=0xFF60 -DCONFIG_RAW_HID_USAGE=0x61 -DCONFIG_RAW_HID_REPORT_SIZE=32 -DCONFIG_ZMK_YASB_LAYER_STATUS=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
   - board: nice_nano_v2
+    shield: charybdis_right_peripheral
+  - board: seeeduino_xiao_ble
+    shield: charybdis_dongle prospector_adapter
+  - board: nice_nano_v2
     shield: settings_reset

@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/zzeneg
     - name: senyasdt
       url-base: https://github.com/senyasdt
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,6 +29,9 @@ manifest:
     - name: zmk-yasb
       remote: senyasdt
       revision: 1682a5a2c0e061eccfb6618bb6042b21ef887077
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: main
       
   self:
     path: config

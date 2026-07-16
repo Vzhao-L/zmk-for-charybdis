@@ -1,0 +1,2 @@
+zephyr_library()
+zephyr_library_sources_ifdef(CONFIG_CHARYBDIS_PMW3610_PERIPHERAL_KEYMAP_STUBS src/keymap_stubs.c)

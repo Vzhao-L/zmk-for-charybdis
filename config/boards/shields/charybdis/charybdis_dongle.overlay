@@ -1,0 +1,53 @@
+#include "charybdis.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
+
+/ {
+    chosen {
+        /delete-property/ zmk,underglow;
+    };
+
+    splits {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        split_input: split_input@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&split_input>;
+        input-processors = <&zip_temp_layer 8 750>;
+
+        mouse_slow {
+            layers = <9>;
+            input-processors = <&zip_xy_scaler 1 2>;
+        };
+
+        mouse_fast {
+            layers = <10>;
+            input-processors = <&zip_xy_scaler 2 1>;
+        };
+
+        mouse_scroll {
+            layers = <1 11>;
+            input-processors = <
+                &zip_xy_scaler 1 15
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)
+            >;
+        };
+    };
+};
+
+&kscan0 {
+    compatible = "zmk,kscan-mock";
+    rows = <4>;
+    columns = <12>;
+    events = <>;
+
+    /delete-property/ diode-direction;
+    /delete-property/ row-gpios;
+};

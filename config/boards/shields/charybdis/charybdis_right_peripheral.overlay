@@ -1,0 +1,23 @@
+#include "charybdis_right.overlay"
+
+&trackball {
+    /delete-property/ scroll-layers;
+    /delete-property/ automouse-layer;
+};
+
+/ {
+    splits {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        split_input: split_input@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            device = <&trackball>;
+        };
+    };
+
+    trackball_listener {
+        status = "disabled";
+    };
+};

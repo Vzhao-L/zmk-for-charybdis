@@ -11,3 +11,5 @@ features:
 siblings:
   - charybdis_left
   - charybdis_right
+  - charybdis_right_peripheral
+  - charybdis_dongle

@@ -1,4 +1,10 @@
 .west/
 build/
 modules/
+prospector-zmk-module/
+zephyr/
 zmk/
+zmk-auto-layer/
+zmk-pmw3610-driver/
+zmk-raw-hid/
+zmk-yasb/
