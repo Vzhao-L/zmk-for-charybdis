@@ -34,7 +34,7 @@ layers:
   - N
   - M
   - ','
-  - {t: ., s: ','}
+  - .
   - /
   - ESC
   - LGUI
@@ -46,38 +46,38 @@ layers:
   - {t: ▽, type: trans}
   - +
   - '*'
-  - '~'
+  - AltGr+Sft+`
   - ''
   - {t: ▽, type: trans}
   - '-'
-  - '#'
-  - '@'
-  - ^
+  - AltGr+3
+  - AltGr+2
+  - AltGr+6
   - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '|'
-  - '{'
-  - '}'
-  - '`'
-  - /
-  - ':'
-  - '?'
-  - '['
-  - ']'
-  - $
+  - AltGr+Sft+\
+  - AltGr+[
+  - AltGr+]
+  - AltGr+`
+  - AltGr+/
+  - AltGr+Sft+;
+  - AltGr+Sft+/
+  - AltGr+[
+  - AltGr+]
+  - AltGr+4
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '"'
-  - <
-  - '>'
+  - AltGr+Sft+'
+  - AltGr+,
+  - AltGr+.
   - '!'
   - \
   - _
-  - '&'
+  - AltGr+7
   - (
   - )
-  - {t: ., s: ','}
+  - AltGr+/
   - {t: SYMBOLS, h: toggle}
   - {t: ▽, type: trans}
   - {t: SYMBOLS, h: toggle}
