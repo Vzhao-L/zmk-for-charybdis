@@ -31,3 +31,7 @@ include:
     shield: senyatyl_right
   - board: nice_nano_v2
     shield: senyatyl_right_peripheral
+  - board: nice_nano_v2
+    shield: senyatyl_right_nomouse
+  - board: nice_nano_v2
+    shield: senyatyl_right_col2row
