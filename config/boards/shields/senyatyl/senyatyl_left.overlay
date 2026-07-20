@@ -1,20 +1,22 @@
 #include "senyatyl.dtsi"
 
 &kscan0 {
+    diode-direction = "col2row";
+
     col-gpios
-        = <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D10 */
-        , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D16 */
-        , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D14 */
-        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D15 */
-        , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D18 */
-        , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D19 */
+        = <&gpio0 9  GPIO_ACTIVE_HIGH> /* D10 */
+        , <&gpio0 10 GPIO_ACTIVE_HIGH> /* D16 */
+        , <&gpio1 11 GPIO_ACTIVE_HIGH> /* D14 */
+        , <&gpio1 13 GPIO_ACTIVE_HIGH> /* D15 */
+        , <&gpio1 15 GPIO_ACTIVE_HIGH> /* D18 */
+        , <&gpio0 2  GPIO_ACTIVE_HIGH> /* D19 */
         ;
 
     row-gpios
-        = <&gpio0 11 GPIO_ACTIVE_HIGH> /* D7 */
-        , <&gpio1 0  GPIO_ACTIVE_HIGH> /* D6 */
-        , <&gpio0 24 GPIO_ACTIVE_HIGH> /* D5 */
-        , <&gpio0 22 GPIO_ACTIVE_HIGH> /* D4 */
-        , <&gpio0 20 GPIO_ACTIVE_HIGH> /* D3 */
+        = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D7 */
+        , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D6 */
+        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D5 */
+        , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D4 */
+        , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D3 */
         ;
 };
