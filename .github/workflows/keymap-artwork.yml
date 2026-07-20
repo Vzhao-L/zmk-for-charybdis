@@ -2,12 +2,6 @@ name: Keymap Artwork
 
 on:
   push:
-    paths:
-      - "config/**/*.keymap"
-      - "config/**/*.dtsi"
-      - "config/**/*.json"
-      - "keymap_drawer.config.yaml"
-      - ".github/workflows/keymap-artwork.yml"
   workflow_dispatch:
 
 permissions:
