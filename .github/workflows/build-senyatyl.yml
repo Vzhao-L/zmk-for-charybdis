@@ -1,0 +1,15 @@
+name: Senyatyl Firmware Build
+
+on:
+  push:
+    paths-ignore:
+      - "keymap/**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  firmware:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
+    with:
+      build_matrix_path: builds/senyatyl.yaml
+      archive_name: senyatyl-firmware

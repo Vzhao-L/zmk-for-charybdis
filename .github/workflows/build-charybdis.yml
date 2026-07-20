@@ -1,4 +1,4 @@
-name: Firmware Build
+name: Charybdis Firmware Build
 
 on:
   push:
@@ -8,14 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  charybdis:
+  firmware:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
     with:
       build_matrix_path: builds/charybdis.yaml
       archive_name: charybdis-firmware
-
-  senyatyl:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
-    with:
-      build_matrix_path: builds/senyatyl.yaml
-      archive_name: senyatyl-firmware

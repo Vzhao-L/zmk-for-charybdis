@@ -10,3 +10,4 @@ include:
     shield: charybdis_right_peripheral
   - board: seeeduino_xiao_ble
     shield: charybdis_dongle prospector_adapter
+    artifact-name: charybdis_dongle-seeeduino_xiao_ble-zmk
