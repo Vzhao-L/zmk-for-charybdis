@@ -8,6 +8,16 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        bt_clear_all_combo {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&bt BT_CLR_ALL>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
