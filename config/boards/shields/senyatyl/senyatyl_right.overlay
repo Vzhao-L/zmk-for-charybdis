@@ -23,6 +23,14 @@
         ;
 };
 
+&gpio0 {
+    pmw3360_reset_hog: pmw3360_reset_hog {
+        gpio-hog;
+        gpios = <11 GPIO_ACTIVE_HIGH>;
+        output-high;
+    };
+};
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
