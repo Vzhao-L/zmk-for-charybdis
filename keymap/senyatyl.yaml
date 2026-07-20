@@ -444,3 +444,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+combos:
+- p: [6, 7]
+  k: BT CLR ALL
