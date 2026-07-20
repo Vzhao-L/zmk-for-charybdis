@@ -5,6 +5,11 @@
 };
 
 / {
+    chosen {
+        /delete-property/ zephyr,console;
+        /delete-property/ zephyr,shell-uart;
+    };
+
     splits {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -19,4 +24,8 @@
     trackball_listener {
         status = "disabled";
     };
+};
+
+&senyatyl_usb_logging_uart {
+    status = "disabled";
 };
