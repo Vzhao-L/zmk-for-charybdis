@@ -13,10 +13,10 @@
         ;
 
     row-gpios
-        = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D7 */
-        , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D6 */
-        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D5 */
+        = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D3 */
         , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D4 */
-        , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D3 */
+        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D5 */
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D7 */
+        , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D6 */
         ;
 };
