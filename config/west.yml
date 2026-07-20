@@ -23,8 +23,9 @@ manifest:
       remote: DoctorWangWang
       revision: main
     - name: zmk-pmw3360-driver
-      remote: KOHSUK
-      revision: pmw3360
+      remote: senyasdt
+      repo-path: zmk-for-charybdis
+      revision: pmw3360-driver-fix
     - name: zmk-auto-layer
       remote: urob
       revision: v0.3
