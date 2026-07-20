@@ -9,11 +9,62 @@ on:
       - "keymap_drawer.config.yaml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   render:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
-    permissions:
-      contents: write
-    with:
-      keymap_patterns: "config/*.keymap"
-      output_folder: "keymap"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install tools
+        run: |
+          pipx install keymap-drawer==0.22.0
+          pipx install west
+
+      - name: Fetch west modules
+        run: |
+          west init -l config
+          west config --local manifest.project-filter " -zmk,-zephyr"
+          west update --fetch-opt=--filter=tree:0
+
+      - name: Draw keymaps
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          mkdir -p keymap
+
+          config_arg=()
+          if [[ -f keymap_drawer.config.yaml ]]; then
+            config_arg=(-c keymap_drawer.config.yaml)
+          fi
+
+          for keymap_file in config/*.keymap; do
+            keyboard="$(basename "$keymap_file" .keymap)"
+            echo "Drawing $keyboard"
+            keymap "${config_arg[@]}" parse -z "$keymap_file" -o "keymap/$keyboard.yaml"
+            keymap "${config_arg[@]}" draw "keymap/$keyboard.yaml" > "keymap/$keyboard.svg"
+          done
+
+      - name: Commit updated artwork
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- keymap; then
+            echo "No keymap artwork changes"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keymap/*.yaml keymap/*.svg
+          git commit -m "keymap-drawer render"
+          git push
