@@ -4,5 +4,8 @@ config SHIELD_SENYATYL_LEFT
 config SHIELD_SENYATYL_RIGHT
     def_bool $(shields_list_contains,senyatyl_right)
 
+config SHIELD_SENYATYL_RIGHT_NOMOUSE
+    def_bool $(shields_list_contains,senyatyl_right_nomouse)
+
 config SHIELD_SENYATYL_RIGHT_PERIPHERAL
     def_bool $(shields_list_contains,senyatyl_right_peripheral)

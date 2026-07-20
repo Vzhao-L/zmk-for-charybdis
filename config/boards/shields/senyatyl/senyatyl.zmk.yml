@@ -9,4 +9,5 @@ features:
 siblings:
   - senyatyl_left
   - senyatyl_right
+  - senyatyl_right_nomouse
   - senyatyl_right_peripheral
