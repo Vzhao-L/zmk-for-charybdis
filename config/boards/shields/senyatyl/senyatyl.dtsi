@@ -2,6 +2,10 @@
 
 #include <physical_layouts.dtsi>
 
+&uicr {
+    nfct-pins-as-gpios;
+};
+
 / {
     chosen {
         zmk,kscan = &kscan0;

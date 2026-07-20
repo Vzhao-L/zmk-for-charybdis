@@ -7,26 +7,26 @@
 
 &kscan0 {
     col-gpios
-        = <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D8 */
+        , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D9 */
+        , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D10 */
+        , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D16 */
+        , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D14 */
+        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D15 */
         ;
 
     row-gpios
-        = <&pro_micro 21 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+        = <&gpio0 31 GPIO_ACTIVE_HIGH> /* D21 */
+        , <&gpio0 29 GPIO_ACTIVE_HIGH> /* D20 */
+        , <&gpio0 2  GPIO_ACTIVE_HIGH> /* D19 */
+        , <&gpio1 15 GPIO_ACTIVE_HIGH> /* D18 */
         ;
 };
 
 &gpio0 {
     pmw3360_reset_hog: pmw3360_reset_hog {
         gpio-hog;
-        gpios = <11 GPIO_ACTIVE_HIGH>;
+        gpios = <11 GPIO_ACTIVE_HIGH>; /* D7 */
         output-high;
     };
 };
@@ -34,17 +34,17 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 22)>,
-                <NRF_PSEL(SPIM_MISO, 0, 24)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,  /* D3 */
+                <NRF_PSEL(SPIM_MOSI, 0, 22)>,     /* D4 */
+                <NRF_PSEL(SPIM_MISO, 0, 24)>;     /* D5 */
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 22)>,
-                <NRF_PSEL(SPIM_MISO, 0, 24)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,  /* D3 */
+                <NRF_PSEL(SPIM_MOSI, 0, 22)>,     /* D4 */
+                <NRF_PSEL(SPIM_MISO, 0, 24)>;     /* D5 */
             low-power-enable;
         };
     };
@@ -56,14 +56,14 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&pro_micro 6 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>; /* D6 */
 
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3360";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* D2 */
         automouse-layer = <8>;
     };
 };

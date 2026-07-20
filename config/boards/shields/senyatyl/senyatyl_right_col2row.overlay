@@ -8,26 +8,26 @@
     diode-direction = "col2row";
 
     col-gpios
-        = <&pro_micro 8  GPIO_ACTIVE_HIGH>
-        , <&pro_micro 9  GPIO_ACTIVE_HIGH>
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+        = <&gpio1 4  GPIO_ACTIVE_HIGH> /* D8 */
+        , <&gpio1 6  GPIO_ACTIVE_HIGH> /* D9 */
+        , <&gpio0 9  GPIO_ACTIVE_HIGH> /* D10 */
+        , <&gpio0 10 GPIO_ACTIVE_HIGH> /* D16 */
+        , <&gpio1 11 GPIO_ACTIVE_HIGH> /* D14 */
+        , <&gpio1 13 GPIO_ACTIVE_HIGH> /* D15 */
         ;
 
     row-gpios
-        = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D21 */
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D20 */
+        , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D19 */
+        , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D18 */
         ;
 };
 
 &gpio0 {
     pmw3360_reset_hog: pmw3360_reset_hog {
         gpio-hog;
-        gpios = <11 GPIO_ACTIVE_HIGH>;
+        gpios = <11 GPIO_ACTIVE_HIGH>; /* D7 */
         output-high;
     };
 };
