@@ -1,0 +1,146 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "QWERTY";
+            bindings = <
+&kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5        &kp N6     &kp N7     &kp N8     &kp N9      &kp N0      &kp BSPC
+&kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T         &kp Y      &kp U      &kp I      &kp O       &kp P       &kp BSLH
+&kp LSHFT  &kp A      &kp S      &kp D      &kp F                    &kp G      &kp H      &kp J      &kp K       &kp L
+           &kp Z      &kp X      &kp C      &kp V                    &kp B      &kp N      &kp M
+                                 &mo 1      &kp SPACE
+            >;
+        };
+
+        symbols_layer {
+            display-name = "SYM";
+            bindings = <
+&trans     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR    &kp RPAR    &kp DEL
+&trans     &kp GRAVE  &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC      &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT     &kp DQT     &kp PIPE
+&trans     &kp TILDE  &kp LT     &kp GT     &kp FSLH                 &kp UNDER  &kp PLUS   &kp COMMA  &kp DOT     &kp QMARK
+           &trans     &trans     &trans     &trans                  &trans     &trans     &trans
+                                 &trans     &trans
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+&trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5        &kp F6     &kp F7     &kp F8     &kp F9      &kp F10     &kp F11
+&trans     &bt BT_PRV &bt BT_NXT &out OUT_TOG &trans    &trans       &trans     &kp HOME   &kp UP     &kp END     &kp F12     &trans
+&trans     &bt BT_CLR &trans     &trans     &trans                  &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &trans
+           &trans     &trans     &trans     &trans                  &trans     &kp PG_DN  &kp PG_UP
+                                 &trans     &trans
+            >;
+        };
+
+        empty_3 {
+            display-name = "L3";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        empty_4 {
+            display-name = "L4";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        empty_5 {
+            display-name = "L5";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        empty_6 {
+            display-name = "L6";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        util_layer {
+            display-name = "UTIL";
+            bindings = <
+&bootloader &sys_reset &bt BT_CLR_ALL &none &none &none     &none &none &none &none &none &bootloader
+&none       &none      &none          &none &none &none     &none &none &none &none &none &sys_reset
+&none       &none      &none          &none &none           &none &none &none &none &none
+            &none      &none          &none &none           &none &none &none
+                                      &none &none
+            >;
+        };
+
+        mouse_layer {
+            display-name = "MOUSE";
+            bindings = <
+&trans &trans &trans &trans     &trans     &trans       &trans &trans &trans &trans &trans &to 0
+&trans &trans &trans &trans     &trans     &trans       &trans &trans &trans &trans &trans &trans
+&trans &trans &mo 11 &mo 10     &mo 9                   &trans &trans &trans &trans &trans
+       &trans &trans &mkp LCLK  &mkp MCLK               &mkp RCLK &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        mouse_slow_layer {
+            display-name = "MOUSE-";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &to 0
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        mouse_fast_layer {
+            display-name = "MOUSE+";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &to 0
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+
+        mouse_scroll_layer {
+            display-name = "SCROLL";
+            bindings = <
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &to 0
+&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+       &trans &trans &trans &trans            &trans &trans &trans
+                            &trans &trans
+            >;
+        };
+    };
+};

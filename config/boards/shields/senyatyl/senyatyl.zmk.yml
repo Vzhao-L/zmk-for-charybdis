@@ -1,0 +1,12 @@
+file_format: "1"
+id: senyatyl
+name: Senyatyl
+type: shield
+requires: [pro_micro]
+features:
+  - keys
+  - pointer
+siblings:
+  - senyatyl_left
+  - senyatyl_right
+  - senyatyl_right_peripheral

@@ -4,7 +4,7 @@ DOCKER_RUN ?= docker run --rm -it -v "$(CURDIR):/workdir" -w /workdir $(DOCKER_I
 BOARD ?= nice_nano_v2
 ZMK_CONFIG ?= $(CURDIR)/config
 
-.PHONY: docker-image shell west-init build-left build-right build-right-peripheral build-dongle build-reset build-all clean
+.PHONY: docker-image shell west-init build-left build-right build-right-peripheral build-dongle build-reset build-senyatyl-left build-senyatyl-right build-senyatyl-right-peripheral build-senyatyl-all build-all clean
 
 docker-image:
 	docker build -t $(DOCKER_IMAGE) .
@@ -32,13 +32,25 @@ build-dongle: docker-image
 build-reset: docker-image
 	$(DOCKER_RUN) make _build-reset
 
+build-senyatyl-left: docker-image
+	$(DOCKER_RUN) make _build-senyatyl-left
+
+build-senyatyl-right: docker-image
+	$(DOCKER_RUN) make _build-senyatyl-right
+
+build-senyatyl-right-peripheral: docker-image
+	$(DOCKER_RUN) make _build-senyatyl-right-peripheral
+
+build-senyatyl-all: docker-image
+	$(DOCKER_RUN) make _build-senyatyl-all
+
 build-all: docker-image
 	$(DOCKER_RUN) make _build-all
 
 clean:
 	rm -rf build
 
-.PHONY: _build-left _build-right _build-right-peripheral _build-dongle _build-reset _build-all
+.PHONY: _build-left _build-right _build-right-peripheral _build-dongle _build-reset _build-senyatyl-left _build-senyatyl-right _build-senyatyl-right-peripheral _build-senyatyl-all _build-all
 
 _build-left: west-init
 	west build -p always -s zmk/app -d build/charybdis_left -b $(BOARD) -- -DZMK_CONFIG=$(ZMK_CONFIG) -DSHIELD=charybdis_left
@@ -54,5 +66,16 @@ _build-dongle: west-init
 
 _build-reset: west-init
 	west build -p always -s zmk/app -d build/settings_reset -b $(BOARD) -- -DZMK_CONFIG=$(ZMK_CONFIG) -DSHIELD=settings_reset
+
+_build-senyatyl-left: west-init
+	west build -p always -s zmk/app -d build/senyatyl_left -b $(BOARD) -- -DZMK_CONFIG=$(ZMK_CONFIG) -DSHIELD=senyatyl_left
+
+_build-senyatyl-right: west-init
+	west build -p always -s zmk/app -d build/senyatyl_right -b $(BOARD) -- -DZMK_CONFIG=$(ZMK_CONFIG) -DSHIELD=senyatyl_right
+
+_build-senyatyl-right-peripheral: west-init
+	west build -p always -s zmk/app -d build/senyatyl_right_peripheral -b $(BOARD) -- -DZMK_CONFIG=$(ZMK_CONFIG) -DSHIELD=senyatyl_right_peripheral
+
+_build-senyatyl-all: _build-senyatyl-left _build-senyatyl-right _build-senyatyl-right-peripheral
 
 _build-all: _build-left _build-right _build-right-peripheral _build-dongle _build-reset

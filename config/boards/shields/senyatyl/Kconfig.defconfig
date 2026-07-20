@@ -1,0 +1,16 @@
+if SHIELD_SENYATYL_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Senyatyl"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_SENYATYL_LEFT || SHIELD_SENYATYL_RIGHT || SHIELD_SENYATYL_RIGHT_PERIPHERAL
+
+config ZMK_SPLIT
+    default y
+
+endif
