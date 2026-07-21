@@ -1,7 +1,49 @@
 layout: {zmk_keyboard: senyatyl}
 layers:
-  QWERTY: [LEFT SHIFT, Q, W, E, R, T, Y, U, I, O, P, '''', LCTRL, A, S, D, F, G, H, J, K, L, ;, ESC, Z, X, C, V, B, N, M, ',', ., /, '3', '4', '2', '1', '8', '9',
-    '7', '6', '5']
+  QWERTY:
+  - LEFT SHIFT
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - ''''
+  - LCTRL
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ESC
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - ''
+  - LEFT GUI
+  - {t: '&nav_word', h: '&num_word_backspace'}
+  - SPACE
+  - {t: '&sym_word', h: LEFT ALT}
+  - {t: ENTER, h: FUNCTIONS}
+  - ''
+  - DEL
+  - TAB
   SYMBOLS:
   - {t: ▽, type: trans}
   - +
@@ -82,9 +124,9 @@ layers:
   - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: NUMBERS, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: QWERTY, h: toggle}
   - SPACE
-  - ''
   - ENTER
   - ''
   - ''
@@ -126,11 +168,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
@@ -170,8 +212,8 @@ layers:
   - {t: Alt+P, h: Alt+I}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: MANAGER, h: toggle}
-  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -345,10 +387,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - ''
   - '&mkp LCLK'
   - '&mkp MCLK'
   - '&mkp RCLK'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -611,7 +653,7 @@ combos:
   k: '&arrow'
 - p: [15, 20]
   k: '&win_word 4'
-- p: [32, 33]
+- p: [32, 31]
   k: BACKSPACE
 - p: [42, 41]
   k: {t: QWERTY, h: toggle}
