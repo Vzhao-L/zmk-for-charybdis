@@ -38,10 +38,10 @@ layers:
   - LGUI
   - {t: '&nav_word', h: '&num_word_backspace'}
   - SPACE
-  - {t: ENTER, h: FUNCTIONS}
+  - '1'
   - {t: ENTER, h: FUNCTIONS}
   - {t: '&sym_word', h: LEFT ALT}
-  - ''
+  - '2'
   - DELETE
   - TAB
   SYMBOLS:
@@ -170,8 +170,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
