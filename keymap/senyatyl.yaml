@@ -1,49 +1,7 @@
 layout: {zmk_keyboard: senyatyl}
 layers:
-  QWERTY:
-  - LEFT SHIFT
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - ''''
-  - LCTRL
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - ;
-  - ESC
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - ','
-  - .
-  - /
-  - LGUI
-  - {t: '&nav_word', h: '&num_word_backspace'}
-  - SPACE
-  - '1'
-  - {t: ENTER, h: FUNCTIONS}
-  - {t: '&sym_word', h: LEFT ALT}
-  - '2'
-  - DELETE
-  - TAB
+  QWERTY: [LEFT SHIFT, Q, W, E, R, T, Y, U, I, O, P, '''', LCTRL, A, S, D, F, G, H, J, K, L, ;, ESC, Z, X, C, V, B, N, M, ',', ., /, '3', '4', '2', '1', '8', '9',
+    '7', '5', '6']
   SYMBOLS:
   - {t: ▽, type: trans}
   - +
@@ -171,7 +129,7 @@ layers:
   - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
