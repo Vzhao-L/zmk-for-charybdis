@@ -36,8 +36,10 @@
         smart_num_nav: smart_num_nav {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
             bindings = <&num_word_backspace>, <&nav_word>;
 
             display-name = "Smart Num/Nav";
@@ -118,8 +120,10 @@
         smart_sym_alt: smart_sym_alt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
             bindings = <&kp &sym_word>;
             display-name = "Smart Sym/Alt";
         };

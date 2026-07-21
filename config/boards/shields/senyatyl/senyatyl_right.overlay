@@ -76,19 +76,14 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* D2 */
-        automouse-layer = <8>;
     };
 };
 
 / {
-    chosen {
-        zephyr,console = &senyatyl_usb_logging_uart;
-        zephyr,shell-uart = &senyatyl_usb_logging_uart;
-    };
-
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        input-processors = <&zip_temp_layer 8 750>;
 
         mouse_slow {
             layers = <9>;
@@ -108,11 +103,5 @@
                 &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)
             >;
         };
-    };
-};
-
-&zephyr_udc0 {
-    senyatyl_usb_logging_uart: senyatyl_usb_logging_uart {
-        compatible = "zephyr,cdc-acm-uart";
     };
 };
