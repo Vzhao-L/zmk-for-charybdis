@@ -23,8 +23,8 @@ manifest:
       remote: DoctorWangWang
       revision: main
     - name: zmk-pmw3360-driver
-      remote: KOHSUK
-      revision: pmw3360
+      remote: senyasdt
+      revision: 8dfd89fcefbc52846b5d530a3de05109da28ca7a
     - name: zmk-auto-layer
       remote: urob
       revision: v0.3
