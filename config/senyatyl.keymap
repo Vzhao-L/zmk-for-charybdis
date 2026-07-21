@@ -361,10 +361,10 @@
         layer_0 {
             display-name = "QWERTY";
             bindings = <
-&kp LEFT_SHIFT  &kp Q  &kp W     &kp E               &kp R      &kp T               &kp Y  &kp U        &kp I                      &kp O       &kp P     &kp SQT
-&kp LCTRL       &kp A  &kp S     &kp D               &kp F      &kp G               &kp H  &kp J        &kp K                      &kp L       &kp SEMI  &kp ESC
-                &kp Z  &kp X     &kp C               &kp V      &kp B               &kp N  &kp M        &kp COMMA                  &kp PERIOD  &kp FSLH
-                       &kp LGUI  &smart_num_nav 0 0  &kp SPACE         &lt 3 ENTER         &lt 3 ENTER  &smart_sym_alt LEFT_ALT 0  &none
+&kp LEFT_SHIFT  &kp Q  &kp W     &kp E               &kp R      &kp T                &kp Y  &kp U        &kp I                      &kp O         &kp P     &kp SQT
+&kp LCTRL       &kp A  &kp S     &kp D               &kp F      &kp G                &kp H  &kp J        &kp K                      &kp L         &kp SEMI  &kp ESC
+                &kp Z  &kp X     &kp C               &kp V      &kp B                &kp N  &kp M        &kp COMMA                  &kp PERIOD    &kp FSLH
+                       &kp LGUI  &smart_num_nav 0 0  &kp SPACE         &kp NUMBER_1         &lt 3 ENTER  &smart_sym_alt LEFT_ALT 0  &kp NUMBER_2
                                  &kp DELETE          &kp TAB
             >;
         };
