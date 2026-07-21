@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: senyatyl}
 layers:
   QWERTY: [LEFT SHIFT, Q, W, E, R, T, Y, U, I, O, P, '''', LCTRL, A, S, D, F, G, H, J, K, L, ;, ESC, Z, X, C, V, B, N, M, ',', ., /, '3', '4', '2', '1', '8', '9',
-    '7', '5', '6', '5']
+    '7', '6', '5']
   SYMBOLS:
   - {t: ▽, type: trans}
   - +
@@ -44,7 +44,6 @@ layers:
   - ENTER
   - ''
   - ''
-  - {t: SYMBOLS, h: toggle}
   - ''
   - ''
   NUMBERS:
@@ -89,7 +88,6 @@ layers:
   - ENTER
   - ''
   - ''
-  - {t: NUMBERS, h: toggle}
   - SPACE
   - ''
   FUNCTIONS:
@@ -129,7 +127,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: QWERTY, h: toggle}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -179,7 +176,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - STACK
   - {t: ▽, type: trans}
   - ''
   NAV:
@@ -220,7 +216,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: NAV, h: toggle}
   - ''
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -269,7 +264,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - ''
   UTIL:
@@ -303,7 +297,6 @@ layers:
   - ''
   - ''
   - {t: BT, h: '0'}
-  - ''
   - ''
   - ''
   - ''
@@ -360,7 +353,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
   MOUSE-:
   - {t: ▽, type: trans}
@@ -405,7 +397,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
   MOUSE+:
   - {t: ▽, type: trans}
@@ -435,7 +426,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -495,10 +485,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
   '12':
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
