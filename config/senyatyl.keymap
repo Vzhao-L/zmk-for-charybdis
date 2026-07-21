@@ -294,7 +294,7 @@
 
         bksp_new {
             bindings = <&kp BACKSPACE>;
-            key-positions = <32 33>;
+            key-positions = <32 31>;
         };
 
         to0 {
@@ -361,11 +361,11 @@
         layer_0 {
             display-name = "QWERTY";
             bindings = <
-&kp LEFT_SHIFT  &kp Q  &kp W         &kp E         &kp R         &kp T                &kp Y  &kp U   &kp I      &kp O       &kp P     &kp SQT
-&kp LCTRL       &kp A  &kp S         &kp D         &kp F         &kp G                &kp H  &kp J   &kp K      &kp L       &kp SEMI  &kp ESC
-                &kp Z  &kp X         &kp C         &kp V         &kp B                &kp N  &kp M   &kp COMMA  &kp PERIOD  &kp FSLH
-                       &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_2         &kp NUMBER_1         &kp N8  &kp N9     &kp N7
-                                     &kp NUMBER_6  &kp NUMBER_5
+&kp LEFT_SHIFT  &kp Q  &kp W  &kp E         &kp R               &kp T             &kp Y  &kp U                      &kp I        &kp O       &kp P     &kp SQT
+&kp LCTRL       &kp A  &kp S  &kp D         &kp F               &kp G             &kp H  &kp J                      &kp K        &kp L       &kp SEMI  &kp ESC
+                &kp Z  &kp X  &kp C         &kp V               &kp B             &kp N  &kp M                      &kp COMMA    &kp PERIOD  &kp FSLH
+                       &none  &kp LEFT_GUI  &smart_num_nav 0 0         &kp SPACE         &smart_sym_alt LEFT_ALT 0  &lt 3 ENTER  &none
+                              &kp DEL       &kp TAB
             >;
         };
 
@@ -376,17 +376,17 @@
 &trans  &kp RA(LS(BSLH))  &kp RA(LBKT)   &kp RA(RBKT)       &kp RA(GRAVE)  &kp RA(FSLH)         &kp RA(LS(SEMI))  &kp RA(LS(FSLH))  &kp RA(LBKT)  &kp RA(RBKT)  &kp RA(N4)    &trans
         &kp RA(LS(SQT))   &kp RA(COMMA)  &kp RA(PERIOD)     &kp EXCL       &kp BSLH             &kp UNDER         &kp RA(N7)        &kp LPAR      &kp RPAR      &kp RA(FSLH)
                           &trans         &tog 1             &kp SPACE                    &none                    &kp ENTER         &none         &none
-                                         &none  &none
+                                         &none              &none
             >;
         };
 
         layer_2 {
             display-name = "NUMBERS";
             bindings = <
-&trans  &kp PLUS  &kp ASTERISK  &kp J      &kp K      &kp PRCNT         &kp MINUS  &trans     &kp MINUS  &trans    &kp EQUAL  &trans
-&trans  &kp N1    &kp N2        &kp N3     &kp N4     &kp SLASH         &kp COLON  &kp N7     &kp N8     &kp N9    &kp N0     &trans
-        &kp DQT   &trans        &kp LS(G)  &kp N5     &kp V             &kp W      &kp N6     &kp LPAR   &kp RPAR  &trans
-                  &trans        &tog 2     &kp SPACE             &none             &kp ENTER  &none      &none
+&trans  &kp PLUS  &kp ASTERISK  &kp J      &kp K   &kp PRCNT             &kp MINUS  &trans     &kp MINUS  &trans    &kp EQUAL  &trans
+&trans  &kp N1    &kp N2        &kp N3     &kp N4  &kp SLASH             &kp COLON  &kp N7     &kp N8     &kp N9    &kp N0     &trans
+        &kp DQT   &trans        &kp LS(G)  &kp N5  &kp V                 &kp W      &kp N6     &kp LPAR   &kp RPAR  &trans
+                  &trans        &trans     &to 0              &kp SPACE             &kp ENTER  &none      &none
                                 &kp SPACE  &none
             >;
         };
@@ -397,7 +397,7 @@
 &trans  &trans      &trans      &trans  &trans  &trans          &kp C_PREVIOUS  &kp C_NEXT  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &trans
 &trans  &kp F1      &kp F2      &kp F3  &kp F4  &kp F6          &trans          &kp F8      &kp F9             &kp F10          &kp F11     &kp F12
         &bt BT_PRV  &bt BT_NXT  &trans  &kp F5  &trans          &trans          &kp F7      &trans             &trans           &trans
-                    &trans      &to 0   &trans          &trans                  &trans      &trans             &trans
+                    &trans      &trans  &to 0           &trans                  &trans      &trans             &trans
                                 &trans  &none
             >;
         };
@@ -408,8 +408,8 @@
 &trans  &trans                 &kp LA(SEMI)                       &mt LA(LS(LBKT)) LA(LBKT)  &mt LA(LS(RBKT)) LA(RBKT)  &trans                         &mt LA(LS(O)) LA(O)  &mt LA(LS(M)) LA(M)  &trans               &trans               &trans               &trans
 &trans  &mt LA(LS(N1)) LA(N1)  &mt LA(LS(N2)) LA(N2)              &mt LA(LS(N3)) LA(N3)      &mt LA(LS(N4)) LA(N4)      &mt LS(LA(N9)) LA(N9)          &mt LS(LA(H)) LA(H)  &mt LA(LS(J)) LA(J)  &mt LA(LS(K)) LA(K)  &mt LA(LS(L)) LA(L)  &mt LA(LS(T)) LA(T)  &trans
         &mt LA(LS(N5)) LA(N5)  &mt LA(LS(NUMBER_6)) LA(NUMBER_6)  &mt LA(LS(N7)) LA(N7)      &mt LA(LS(N8)) LA(N8)      &trans                         &mt LA(LS(R)) LA(Q)  &mt LA(MINUS) LA(X)  &mt LA(PLUS) LA(Y)   &mt LA(I) LA(P)      &trans
-                               &trans                             &tog 4                     &none                                             &trans                       &trans               &trans               &trans
-                                                                  &trans  &none
+                               &trans                             &trans                     &tog 4                                            &trans                       &trans               &trans               &trans
+                                                                  &trans                     &none
             >;
         };
 
@@ -420,7 +420,7 @@
 &trans  &mt LC(LS(A)) LC(A)  &mt LC(LS(F)) LC(F)  &mt LC(LS(C)) LC(C)  &mt LC(LS(V)) LC(V)      &trans          &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
         &trans               &trans               &trans               &mt LC(LS(TAB)) LC(TAB)  &trans          &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
                              &trans               &tog 5               &none                            &trans            &trans     &trans     &trans
-                                                  &trans  &none
+                                                  &trans               &none
             >;
         };
 
@@ -449,11 +449,11 @@
         layer_8 {
             display-name = "MOUSE";
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &mo 11     &mo 10     &mo 9      &trans          &trans  &trans  &trans  &trans  &trans
-                &mkp LCLK  &mkp MCLK  &mkp RCLK          &trans          &trans  &trans  &trans
-                           &trans     &none
+&trans  &trans  &trans  &trans     &trans     &trans             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans             &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &mo 11  &mo 10     &mo 9      &trans             &trans  &trans  &trans  &trans  &trans
+                &none   &mkp LCLK  &mkp MCLK          &mkp RCLK          &trans  &trans  &trans
+                        &trans     &none
             >;
         };
 
