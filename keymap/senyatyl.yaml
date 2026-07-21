@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: senyatyl}
 layers:
   QWERTY:
-  - ''
+  - LEFT SHIFT
   - Q
   - W
   - E
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - ''
-  - LSHFT
+  - ''''
+  - LCTRL
   - A
   - S
   - D
@@ -24,7 +24,7 @@ layers:
   - K
   - L
   - ;
-  - ''''
+  - ESC
   - Z
   - X
   - C
@@ -36,14 +36,14 @@ layers:
   - .
   - /
   - LGUI
-  - ''
-  - ''
-  - {t: ENTER, h: FUNCTIONS}
-  - {t: '&sym_word 1', h: LEFT ALT}
-  - ''
-  - ''
-  - {t: '&nav_word 5', h: '&num_word_backspace 2'}
+  - {t: '&nav_word', h: '&num_word_backspace'}
   - SPACE
+  - {t: ENTER, h: FUNCTIONS}
+  - {t: ENTER, h: FUNCTIONS}
+  - {t: '&sym_word', h: LEFT ALT}
+  - ''
+  - DELETE
+  - TAB
   SYMBOLS:
   - {t: ▽, type: trans}
   - +
@@ -80,14 +80,14 @@ layers:
   - )
   - AltGr+/
   - {t: ▽, type: trans}
-  - ''
+  - {t: SYMBOLS, h: toggle}
+  - SPACE
   - ''
   - ENTER
-  - {t: ▽, type: trans}
   - ''
   - ''
   - {t: SYMBOLS, h: toggle}
-  - SPACE
+  - ''
   NUMBERS:
   - {t: ▽, type: trans}
   - +
@@ -124,10 +124,10 @@ layers:
   - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
+  - {t: NUMBERS, h: toggle}
+  - SPACE
   - ''
   - ENTER
-  - {t: ▽, type: trans}
   - ''
   - ''
   - {t: NUMBERS, h: toggle}
@@ -168,7 +168,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: QWERTY, h: toggle}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
@@ -212,13 +212,13 @@ layers:
   - {t: Alt+P, h: Alt+I}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: MANAGER, h: toggle}
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - STACK
   - {t: ▽, type: trans}
   NAV:
   - {t: ▽, type: trans}
@@ -256,13 +256,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: NAV, h: toggle}
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   STACK:
   - {t: ▽, type: trans}
@@ -306,7 +306,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   UTIL:
   - ''
@@ -528,10 +528,54 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  '12':
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [1, 14, 25]
   k: '&soft_off'
-- p: [37, 40]
+- p: [35, 39]
   k: '&caps_word'
   l: [QWERTY]
 - p: [4, 5]
@@ -540,7 +584,7 @@ combos:
 - p: [17, 16]
   k: '['
   l: [QWERTY]
-- p: [29, 28]
+- p: [28, 27]
   k: '{'
   l: [QWERTY]
 - p: [6, 7]
@@ -549,22 +593,22 @@ combos:
 - p: [19, 18]
   k: ']'
   l: [QWERTY]
-- p: [30, 31]
+- p: [30, 30, 29]
   k: '}'
   l: [QWERTY]
 - p: [1, 2]
   k: ESC
   l: [QWERTY]
-- p: [0, 5, 37]
+- p: [0, 5, 35]
   k: {t: UTIL, h: toggle}
   l: [QWERTY]
-- p: [6, 11, 40]
+- p: [6, 11, 39]
   k: {t: UTIL, h: toggle}
   l: [QWERTY]
-- p: [0, 5, 37]
+- p: [0, 5, 35]
   k: {t: UTIL, h: toggle}
   l: [UTIL]
-- p: [6, 11, 40]
+- p: [6, 11, 39]
   k: {t: UTIL, h: toggle}
   l: [UTIL]
 - p: [2, 3, 4]
@@ -579,7 +623,7 @@ combos:
 - p: [11, 23]
   k: '&sys_reset'
   l: [UTIL]
-- p: [11, 35]
+- p: [23, 33]
   k: '&bootloader'
   l: [UTIL]
 - p: [4, 3, 2]
@@ -600,7 +644,7 @@ combos:
 - p: [4, 16]
   k: '&gth'
   l: [QWERTY]
-- p: [16, 28]
+- p: [16, 27]
   k: '&lth'
   l: [QWERTY]
 - p: [7, 19]
@@ -611,5 +655,5 @@ combos:
   k: '&win_word 4'
 - p: [32, 33]
   k: BACKSPACE
-- p: [26, 27]
+- p: [42, 41]
   k: {t: QWERTY, h: toggle}
