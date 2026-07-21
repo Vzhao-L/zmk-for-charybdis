@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senyatyl Layout Editor</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111820;
+      --panel: #18222d;
+      --line: #2e4051;
+      --text: #d9e3ec;
+      --muted: #91a4b5;
+      --accent: #6db4ff;
+      --key: #223246;
+      --key-border: #83bfff;
+      --selected: #ffd166;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      grid-template-columns: minmax(640px, 1fr) 380px;
+      min-height: 100vh;
+    }
+
+    main {
+      padding: 16px;
+      overflow: auto;
+    }
+
+    aside {
+      border-left: 1px solid var(--line);
+      background: var(--panel);
+      padding: 16px;
+      overflow: auto;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin: 0 0 12px;
+      font-weight: 650;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    button, input, textarea {
+      font: inherit;
+      color: var(--text);
+      background: #101821;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: var(--accent);
+    }
+
+    label {
+      display: grid;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    input {
+      width: 86px;
+      padding: 6px 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      padding: 10px;
+      resize: vertical;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    svg {
+      width: 100%;
+      height: calc(100vh - 120px);
+      min-height: 620px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        #0e151d;
+      background-size: 50px 50px;
+      touch-action: none;
+    }
+
+    .key rect {
+      fill: var(--key);
+      stroke: var(--key-border);
+      stroke-width: 2;
+      rx: 6;
+    }
+
+    .key text {
+      fill: var(--text);
+      font-size: 26px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .key .idx {
+      fill: var(--muted);
+      font-size: 15px;
+      dominant-baseline: auto;
+    }
+
+    .key.selected rect {
+      stroke: var(--selected);
+      stroke-width: 4;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 8px 0 14px;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 18px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 980px) {
+      body { grid-template-columns: 1fr; }
+      aside { border-left: 0; border-top: 1px solid var(--line); }
+      svg { height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="toolbar">
+      <h1>Senyatyl Layout Editor</h1>
+      <button id="copy">Copy DTSI keys</button>
+      <button id="reset">Reset</button>
+      <button id="normalize">Normalize Y</button>
+      <button id="snap">Snap 10</button>
+    </div>
+    <svg id="canvas" viewBox="-80 -40 1500 700" aria-label="Keyboard layout editor"></svg>
+  </main>
+
+  <aside>
+    <div class="hint">
+      Drag keys with the mouse. Arrow keys move the selected key by 1 unit; hold Shift for 10 units.
+      Rotation is in tenths of a degree, matching ZMK physical layout values.
+    </div>
+
+    <div class="fields">
+      <label>Index<input id="idx" readonly></label>
+      <label>X<input id="x" type="number"></label>
+      <label>Y<input id="y" type="number"></label>
+      <label>W<input id="w" type="number"></label>
+      <label>H<input id="h" type="number"></label>
+      <label>Rot<input id="rot" type="number"></label>
+    </div>
+
+    <textarea id="out" spellcheck="false"></textarea>
+    <div class="status" id="status"></div>
+  </aside>
+
+  <script>
+    const labels = [
+      "none","Q","W","E","R","T","Y","U","I","O","P","none",
+      "LSHFT","A","S","D","F","G","H","J","K","L",";","'",
+      "Z","X","C","V","B","N","M",",",".","/",
+      "LGUI","none","none","ENTER","ALT","none","none",
+      "NAV","SPACE"
+    ];
+
+    const initialKeys = [
+      [100,100,0,100,0,0,100],
+      [100,100,100,100,0,100,100],
+      [100,100,200,0,0,200,0],
+      [100,100,300,100,0,300,100],
+      [100,100,400,100,0,400,100],
+      [100,100,500,100,0,500,100],
+      [100,100,750,100,0,750,100],
+      [100,100,850,100,0,850,100],
+      [100,100,950,100,0,950,100],
+      [100,100,1050,100,0,1050,100],
+      [100,100,1150,100,0,1150,100],
+      [100,100,1250,100,0,1250,100],
+      [100,100,0,200,0,0,200],
+      [100,100,100,200,0,100,200],
+      [100,100,200,100,0,200,100],
+      [100,100,300,200,0,300,200],
+      [100,100,400,200,0,400,200],
+      [100,100,500,200,0,500,200],
+      [100,100,750,200,0,750,200],
+      [100,100,850,200,0,850,200],
+      [100,100,950,200,0,950,200],
+      [100,100,1050,200,0,1050,200],
+      [100,100,1150,200,0,1150,200],
+      [100,100,1250,200,0,1250,200],
+      [100,100,100,300,0,100,300],
+      [100,100,200,200,0,200,200],
+      [100,100,300,300,0,300,300],
+      [100,100,400,300,0,400,300],
+      [100,100,500,300,0,500,300],
+      [100,100,750,300,0,750,300],
+      [100,100,850,300,0,850,300],
+      [100,100,950,300,0,950,300],
+      [100,100,1050,300,0,1050,300],
+      [100,100,1150,300,0,1150,300],
+      [100,100,200,300,0,200,300],
+      [100,100,300,400,0,300,400],
+      [100,100,400,400,0,400,400],
+      [100,100,500,400,0,500,400],
+      [100,100,950,400,0,950,400],
+      [100,100,1050,400,0,1050,400],
+      [100,100,1150,400,0,1150,400],
+      [100,100,200,500,0,200,500],
+      [100,100,300,500,0,300,500]
+    ].map((v, i) => ({
+      i, w: v[0], h: v[1], x: v[2], y: v[3], rot: v[4], rx: v[5], ry: v[6],
+      label: labels[i] || String(i)
+    }));
+
+    const svg = document.getElementById("canvas");
+    const out = document.getElementById("out");
+    const statusEl = document.getElementById("status");
+    const inputs = {
+      idx: document.getElementById("idx"),
+      x: document.getElementById("x"),
+      y: document.getElementById("y"),
+      w: document.getElementById("w"),
+      h: document.getElementById("h"),
+      rot: document.getElementById("rot")
+    };
+
+    let keys = structuredClone(initialKeys);
+    let selected = 0;
+    let drag = null;
+
+    function fmt(n, width = 4) {
+      return String(Math.round(n)).padStart(width, " ");
+    }
+
+    function line(k, first) {
+      const prefix = first ? "            = " : "            , ";
+      return `${prefix}<&key_physical_attrs ${fmt(k.w, 3)} ${fmt(k.h, 3)} ${fmt(k.x)} ${fmt(k.y)} ${fmt(k.rot)} ${fmt(k.rx)} ${fmt(k.ry)}>`;
+    }
+
+    function makeDtsi() {
+      return "        keys\n" + keys.map((k, i) => line(k, i === 0)).join("\n") + "\n            ;";
+    }
+
+    function setStatus(text) {
+      statusEl.textContent = text;
+      if (text) setTimeout(() => { statusEl.textContent = ""; }, 1600);
+    }
+
+    function screenPoint(evt) {
+      const pt = svg.createSVGPoint();
+      pt.x = evt.clientX;
+      pt.y = evt.clientY;
+      return pt.matrixTransform(svg.getScreenCTM().inverse());
+    }
+
+    function select(i) {
+      selected = i;
+      syncInputs();
+      render();
+    }
+
+    function syncInputs() {
+      const k = keys[selected];
+      inputs.idx.value = k.i;
+      inputs.x.value = Math.round(k.x);
+      inputs.y.value = Math.round(k.y);
+      inputs.w.value = Math.round(k.w);
+      inputs.h.value = Math.round(k.h);
+      inputs.rot.value = Math.round(k.rot);
+      out.value = makeDtsi();
+    }
+
+    function applyInputs() {
+      const k = keys[selected];
+      for (const name of ["x", "y", "w", "h", "rot"]) {
+        k[name] = Number(inputs[name].value) || 0;
+      }
+      k.rx = k.x;
+      k.ry = k.y;
+      render();
+      out.value = makeDtsi();
+    }
+
+    function render() {
+      svg.replaceChildren();
+      for (const k of keys) {
+        const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        g.classList.add("key");
+        if (k.i === selected) g.classList.add("selected");
+        g.setAttribute("transform", `translate(${k.x} ${k.y}) rotate(${k.rot / 10} ${k.w / 2} ${k.h / 2})`);
+        g.dataset.index = k.i;
+
+        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        rect.setAttribute("width", k.w);
+        rect.setAttribute("height", k.h);
+
+        const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        label.setAttribute("x", k.w / 2);
+        label.setAttribute("y", k.h / 2 + 8);
+        label.textContent = k.label;
+
+        const idx = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        idx.classList.add("idx");
+        idx.setAttribute("x", 8);
+        idx.setAttribute("y", 18);
+        idx.textContent = k.i;
+
+        g.append(rect, label, idx);
+        g.addEventListener("pointerdown", (evt) => {
+          evt.preventDefault();
+          select(k.i);
+          const p = screenPoint(evt);
+          drag = { i: k.i, dx: p.x - k.x, dy: p.y - k.y };
+          g.setPointerCapture(evt.pointerId);
+        });
+        svg.append(g);
+      }
+    }
+
+    svg.addEventListener("pointermove", (evt) => {
+      if (!drag) return;
+      const p = screenPoint(evt);
+      const k = keys[drag.i];
+      k.x = Math.round(p.x - drag.dx);
+      k.y = Math.round(p.y - drag.dy);
+      k.rx = k.x;
+      k.ry = k.y;
+      syncInputs();
+      render();
+    });
+
+    svg.addEventListener("pointerup", () => {
+      drag = null;
+    });
+
+    document.addEventListener("keydown", (evt) => {
+      if (evt.target.tagName === "INPUT" || evt.target.tagName === "TEXTAREA") return;
+      const step = evt.shiftKey ? 10 : 1;
+      const k = keys[selected];
+      let handled = true;
+      if (evt.key === "ArrowLeft") k.x -= step;
+      else if (evt.key === "ArrowRight") k.x += step;
+      else if (evt.key === "ArrowUp") k.y -= step;
+      else if (evt.key === "ArrowDown") k.y += step;
+      else handled = false;
+      if (!handled) return;
+      evt.preventDefault();
+      k.rx = k.x;
+      k.ry = k.y;
+      syncInputs();
+      render();
+    });
+
+    for (const input of [inputs.x, inputs.y, inputs.w, inputs.h, inputs.rot]) {
+      input.addEventListener("input", applyInputs);
+    }
+
+    document.getElementById("copy").addEventListener("click", async () => {
+      out.value = makeDtsi();
+      out.select();
+      try {
+        await navigator.clipboard.writeText(out.value);
+        setStatus("Copied DTSI keys block.");
+      } catch {
+        document.execCommand("copy");
+        setStatus("Selected DTSI keys block.");
+      }
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+      keys = structuredClone(initialKeys);
+      select(0);
+      setStatus("Reset.");
+    });
+
+    document.getElementById("normalize").addEventListener("click", () => {
+      const minY = Math.min(...keys.map(k => k.y));
+      for (const k of keys) {
+        k.y -= minY;
+        k.ry = k.y;
+      }
+      syncInputs();
+      render();
+      setStatus("Normalized Y.");
+    });
+
+    document.getElementById("snap").addEventListener("click", () => {
+      for (const k of keys) {
+        k.x = Math.round(k.x / 10) * 10;
+        k.y = Math.round(k.y / 10) * 10;
+        k.rx = k.x;
+        k.ry = k.y;
+      }
+      syncInputs();
+      render();
+      setStatus("Snapped to 10.");
+    });
+
+    select(0);
+  </script>
+</body>
+</html>
