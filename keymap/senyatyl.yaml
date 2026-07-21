@@ -37,9 +37,9 @@ layers:
   - /
   - ''
   - LEFT GUI
-  - {t: '&nav_word', h: '&num_word_backspace'}
+  - {t: '&nav_word 5', h: '&num_word_backspace 2'}
   - SPACE
-  - {t: '&sym_word', h: LEFT ALT}
+  - {t: '&sym_word 1', h: LEFT ALT}
   - {t: ENTER, h: FUNCTIONS}
   - ''
   - DEL
