@@ -20,3 +20,16 @@
         , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D6 */
         ;
 };
+
+/ {
+    chosen {
+        zephyr,console = &senyatyl_left_usb_logging_uart;
+        zephyr,shell-uart = &senyatyl_left_usb_logging_uart;
+    };
+};
+
+&zephyr_udc0 {
+    senyatyl_left_usb_logging_uart: senyatyl_left_usb_logging_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
