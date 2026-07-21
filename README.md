@@ -19,3 +19,11 @@ make clean
 ```
 
 Firmware artifacts are written under `build/*/zephyr/`.
+
+## Senyatyl Layout
+
+Visual layout tuning lives in a separate repository:
+
+https://github.com/senyasdt/senyatyl-layout-editor
+
+Use it to export both the ZMK `physical_layout_0.keys` block and `config/senyatyl.json` for Keymap Editor.
