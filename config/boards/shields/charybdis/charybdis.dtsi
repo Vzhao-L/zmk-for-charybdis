@@ -64,12 +64,11 @@
         rows = <5>;
 
         map = <
-			RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)                   RC(0,11) RC(0,10) RC(0,9) RC(0,8) RC(0,7) RC(0,6)
-			RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                   RC(1,11) RC(1,10) RC(1,9) RC(1,8) RC(1,7) RC(1,6)
-			RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                   RC(2,11) RC(2,10) RC(2,9) RC(2,8) RC(2,7) RC(2,6)
-			RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                   RC(3,11) RC(3,10) RC(3,9) RC(3,8) RC(3,7) RC(3,6)
-					                RC(4,1) RC(4,2) RC(4,3)                   RC(4,10)  RC(4,9)
-									        RC(4,4) RC(4,5)                   RC(4,11) 
+			RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4)            RC(0,9) RC(0,8) RC(0,7) RC(0,6) RC(0,5)
+			RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4)            RC(1,9) RC(1,8) RC(1,7) RC(1,6) RC(1,5) 
+			RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)            RC(2,9) RC(2,8) RC(2,7) RC(2,6) RC(2,5) 
+			                        RC(3,3) RC(3,4)            RC(3,9) RC(3,8)
+					              
         >;
     };
 	
@@ -79,33 +78,26 @@
 
         diode-direction = "row2col";
 		row-gpios
-            = <&gpio0 31 GPIO_ACTIVE_HIGH>
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>
-            , <&gpio0 24 GPIO_ACTIVE_HIGH>
-	        , <&gpio0 22 GPIO_ACTIVE_HIGH>
-	        , <&gpio1 6 GPIO_ACTIVE_HIGH>
+            = <&gpio1 6 GPIO_ACTIVE_HIGH>
+            , <&gpio1 4 GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+	        , <&gpio1 0 GPIO_ACTIVE_HIGH>
             ;
     };
 
  left_encoder_1: encoder_left_1 {
         compatible = "alps,ec11";
-        a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <12>;
         status = "disabled";
     };
 
-    left_encoder_2: encoder_left_2 {
-        compatible = "alps,ec11";
-      a-gpios = <&gpio1 02 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 07 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <12>;
-        status = "disabled";
-    };
+ 
 
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder_1 &left_encoder_2>;
+        sensors = <&left_encoder_1>;
 		triggers-per-rotation = <6>;
     };
 };
