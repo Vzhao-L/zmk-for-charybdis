@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/led/led.h>
 
 #include <physical_layouts.dtsi>
 
@@ -55,7 +54,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layouts = &physical_layout_0;
-	zmk,underglow = &led_strip;
+	
     };
 
     default_transform: keymap_transform_0 {
