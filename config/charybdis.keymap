@@ -55,42 +55,7 @@
     behaviors {
     };
 
-    macros {
-        To1_macro: To1_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To1_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(128,100,50) &to 1>;
-        };
-
-        To1_macro_A: To1_macro_A {
-            compatible = "zmk,behavior-macro";
-            label = "To1_macro_A";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(128,100,50) &to 1>;
-        };
-
-        To0_macro: To0_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To0_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFR &to 0>;
-        };
-
-        To2_macro_A: To2_macro_A {
-            compatible = "zmk,behavior-macro";
-            label = "To2_macro_A";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(250,100,50) &to 2>;
-        };
-
-        To2_macro: To2_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To2_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(250,100,50) &to 2>;
-        };
-    };
+   
 
     keymap {
         compatible = "zmk,keymap";
