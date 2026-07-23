@@ -104,7 +104,7 @@
             >;
 
             sensor-bindings =
-                <&scroll_vertical_encoder>,
+                <&scroll_vertical_encoder>;
 
             // 编码器1：上下滚动,,
             // <&scroll_horizontal_encoder>;
