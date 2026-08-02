@@ -64,34 +64,34 @@
 
         K6_layer2:K6_layer2 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A &kp N6>;
+            bindings = <&Mo2_macro_A>,<&kp>;
         };
 
          t_layer2:t_layer2 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A &kp T>;
+            bindings = <&Mo2_macro_A>,<&kp>;
         };
 
         aop_layer3:aop_layer3 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo3_macro_A &kp APOS>;
+            bindings = <&Mo3_macro_A>,<&kp>;
         };
 
          P_layer2:P_layer2 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A &kp P>;
+            bindings = <&Mo2_macro_A>,<&kp>;
         };
 
     };
@@ -163,9 +163,9 @@
 
         layer_0 {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &K5_layer3 0 N5      &K6_layer2     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E         &kp R      &t_layer2      &kp Y      &kp U      &kp I      &kp O             &P_layer2    &kp BSLH
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &aop_layer3
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &K5_layer3 0 N5      &K6_layer2 0 N6     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
+&kp TAB         &kp Q   &kp W   &kp E         &kp R      &t_layer2 0 T      &kp Y      &kp U      &kp I      &kp O             &P_layer2 0 P    &kp BSLH
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &aop_layer3 0 AOPS
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
                                 &kp LEFT_ALT  &kp SPACE  &Mo1_macro_A      &kp LWIN   &kp SPACE
                                               &mkp MB1   &mkp MB2    &kp ENTER
