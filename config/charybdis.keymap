@@ -33,7 +33,7 @@
 };
 
 / {
-    // 上下滚动编码器行为
+    // 上下滚动编码器行为.
 
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
