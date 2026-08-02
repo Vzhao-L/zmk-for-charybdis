@@ -56,10 +56,10 @@
      behaviors {
         K5_layer3:K5_layer3 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A &kp N5>;
+            bindings = <&Mo2_macro_A>,<&kp N5>;
         };
 
         K6_layer2:K6_layer2 {
