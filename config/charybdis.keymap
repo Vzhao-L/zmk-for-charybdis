@@ -59,7 +59,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo3_macro_A>, <&kp N5>;
+            bindings = <&Mo3_macro_A &kp N5>;
         };
 
         K6_layer2:K6_layer2 {
@@ -67,7 +67,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A>, <&kp N6>;
+            bindings = <&Mo2_macro_A &kp N6>;
         };
 
          t_layer2:t_layer2 {
@@ -75,7 +75,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A>, <&kp T>;
+            bindings = <&Mo2_macro_A &kp T>;
         };
 
         aop_layer3:aop_layer3 {
@@ -83,7 +83,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo3_macro_A>, <&kp APOS>;
+            bindings = <&Mo3_macro_A &kp APOS>;
         };
 
          P_layer2:P_layer2 {
@@ -91,7 +91,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&Mo2_macro_A>, <&kp P>;
+            bindings = <&Mo2_macro_A &kp P>;
         };
 
     };
