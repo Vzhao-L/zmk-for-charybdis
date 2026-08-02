@@ -133,6 +133,8 @@
         };
 
         Mo1_macro_A: Mo1_macro_A {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <&macro_press &mo 1>
@@ -143,6 +145,8 @@
         };
 
         Mo2_macro_A: Mo2_macro_A {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <&macro_press &mo 2>
@@ -153,6 +157,8 @@
         };
 
         Mo3_macro_A: Mo3_macro_A {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <&macro_press &mo 3>
