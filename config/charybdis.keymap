@@ -53,11 +53,11 @@
 
         layer_1 {
             bindings = <
-&kp ESC         &kp F1           &kp F2           &kp F3           &kp F4             &kp F5               &kp F6    &kp F7     &kp F8           &kp F9  &kp F10   &kp BACKSPACE
-&kp TAB         &kp F11          &kp UP           &kp F12          &kp C_VOLUME_UP    &bt BT_NXT           &kp HOME  &kp PG_UP  &kp PRINTSCREEN  &none   &kp CAPS  &kp DELETE
-&kp LEFT_SHIFT  &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOLUME_DOWN  &bt BT_CLR           &kp END   &kp PG_DN  &none            &none   &none     &kp GRAVE
-&kp LCTRL       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG    &none                &none     &none      &none            &none   &kp BSLH  &kp ENTER
-                                                  &kp LEFT_ALT     &kp LEFT_BRACKET   &kp RIGHT_BRACKET    &none     &none
+&kp ESC         &kp F1           &kp F2           &kp F3           &kp F4             &kp F5               &kp F6                   &kp F7     &kp F8           &kp F9  &kp F10   &kp BACKSPACE
+&kp TAB         &kp F11          &kp UP           &kp F12          &kp C_VOLUME_UP    &bt BT_NXT           &kp HOME                 &kp PG_UP  &kp PRINTSCREEN  &none   &kp CAPS  &kp DELETE
+&kp LEFT_SHIFT  &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOLUME_DOWN  &bt BT_CLR           &kp END                  &kp PG_DN  &none            &none   &none     &kp GRAVE
+&kp LCTRL       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG    &none                &kp LANG_ZENKAKUHANKAKU  &none      &none            &none   &kp BSLH  &kp ENTER
+                                                  &kp LEFT_ALT     &kp LEFT_BRACKET   &kp RIGHT_BRACKET    &none                    &none
                                                                    &kp QUESTION       &kp SPACE            &none
             >;
         };
