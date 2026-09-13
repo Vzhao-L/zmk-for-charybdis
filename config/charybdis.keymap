@@ -42,10 +42,10 @@
 
         layer_0 {
             bindings = <
-&lt 3 Q  &kp W  &kp E     &kp R     &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P
-&kp A    &kp S  &kp D     &kp F     &kp G        &kp H      &kp J            &kp K      &kp L    &kp ENTER
-&kp Z    &kp X  &kp C     &kp V     &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH
-                &mkp MB1  &mkp MB2  &lt 1 ESC    &kp SPACE  &lt 2 BACKSPACE
+&lt 3 Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P
+&kp A    &kp S  &kp D     &kp F  &kp G        &kp H      &kp J            &kp K      &kp L    &kp ENTER
+&kp Z    &kp X  &kp C     &kp V  &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH
+                &mkp MB1  &mkp MB2  &lt 1 ESC    &kp SPACE  &lt 2 BACKSPACE &kp DEL
             >;
         };
 
@@ -54,7 +54,7 @@
 &kp F1          &kp F2     &kp F3        &kp F4    &kp F5     &kp F6     &kp F7            &kp F8         &kp F9     &kp F10
 &kp N1          &kp N2     &kp N3        &kp N4    &kp N5     &kp N6     &kp N7            &kp N8         &kp N9     &kp N0
 &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp CAPS  &kp TAB    &kp MINUS  &kp LEFT_BRACKET  &kp SEMICOLON  &kp COMMA  &kp BACKSLASH
-                           &none         &none     &none      &kp F11    &kp F12
+                           &none         &none     &none      &kp F11    &kp F12   &none
             >;
         };
 
@@ -63,7 +63,7 @@
 &none  &none           &none           &none            &none            &none      &none     &none    &none       &none
 &none  &none           &kp UP_ARROW    &none            &kp PAGE_UP      &none      &none     &none    &none       &none
 &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp EQUAL  &kp RBKT  &kp SQT  &kp PERIOD  &kp SLASH
-                       &none           &none            &none            &none      &none
+                       &none           &none            &none            &none      &none    &none
             >;
         };
 
@@ -72,61 +72,57 @@
 &none  &none  &none  &none  &none    &none       &none         &none         &none         &none
 &none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
 &none  &none  &none  &none  &none    &none       &none         &none         &none         &none
-              &none  &none  &none    &none       &none
+              &none  &none  &none    &none       &none  &none
             >;
         };
-
-        /* layer_2 {
+         layer_4 {
             bindings = <
-&none  &none   &none    &none   &none         &none         &kp N1         &none         &none     &none  &none   &to 0
-&none  &none   &none    &none   &none         &none         &none         &none          &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
-&none  &none   &none    &none   &none         &none         &none         &mkp LCLK     &mkp RCLK  &none  &none   &none
-&none  &none   &none    &none   &bt BT_NXT  &bt BT_CLR    &none         &none         &none     &none  &none   &none
-                                   &none         &none         &none         &none         &none
-                                                 &none         &none         &none
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+              &none  &none  &none    &none       &none  &none
             >;
-       
-            
         };
-
-       Mouse {
+         layer_5 {
             bindings = <
-&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
-&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
-&bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5         &mo 5       &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
-                                         &mo 5         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
-                                                       &none      &trans        &trans
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+              &none  &none  &none    &none       &none  &none
             >;
-
-            
         };
-
-        layer_4 {
+         layer_6 {
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
-&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
-                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
-                                      &trans     &trans       &trans
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+              &none  &none  &none    &none       &none  &none
             >;
-                
-                
-               
         };
-
-        layer_5 {
+         layer_7 {
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
-&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
-                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
-                                      &trans     &trans       &trans
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+              &none  &none  &none    &none       &none  &none
             >;
-                
-                
-        };*/
+        };
+         layer_8 {
+            bindings = <
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+              &none  &none  &none    &none       &none  &none
+            >;
+        };
+         layer_9 {
+            bindings = <
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
+              &none  &none  &none    &none       &none  &none
+            >;
+        };
+        
     };
 };
