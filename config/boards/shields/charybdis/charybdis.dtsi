@@ -53,9 +53,9 @@
 
 
 / {
-    chosen {
+     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layouts = &Nano35_layout;
 	zmk,underglow = &led_strip;
     };
 
