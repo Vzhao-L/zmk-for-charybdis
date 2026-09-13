@@ -3,9 +3,9 @@
 #include <physical_layouts.dtsi>
 
 / {
-    Nano35_layout: Nano35_layout {
+    physical_layout_0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "Nano35";
+        display-name = "default_transform";
 
         kscan = <&kscan0>;
         transform = <&matrix_transform0>;
@@ -53,9 +53,9 @@
 
 
 / {
-     chosen {
+      chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layouts = &Nano35_layout;
+        zmk,physical-layouts = &physical_layout_0;
 	zmk,underglow = &led_strip;
     };
 
