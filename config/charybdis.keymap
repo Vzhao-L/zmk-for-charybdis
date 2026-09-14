@@ -102,13 +102,13 @@
 &kp TAB         &kp Q   &kp W   &kp E         &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O             &kp P     &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
-                                &kp LEFT_ALT  &kp SPACE  &to 1       &kp LWIN   &kp SPACE
+                                &kp LEFT_ALT  &kp SPACE  &tog 1      &kp LWIN   &kp SPACE
                                               &mkp MB1   &mkp MB2    &kp ENTER
             >;
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,
+                // 编码器1：上下滚动,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
@@ -116,23 +116,23 @@
 
         layer_1 {
             bindings = <
-&kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6        &kp F7     &kp F8    &kp F9      &kp F10            &kp F11  &kp F12
-&kp CAPS        &none            &none            &none            &none            &none         &none      &none     &kp UP      &none              &none    &none
-&kp LEFT_SHIFT  &none            &none            &none            &bt BT_NXT       &bt BT_CLR    &none      &kp LEFT  &kp DOWN    &kp RIGHT          &none    &none
-&kp LCTRL       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none         &none      &none     &kp PERIOD  &kp RIGHT_BRACKET  &none    &kp EQUAL
-                                                  &kp LEFT_ALT     &kp SPACE        &to 0         &none      &none
-                                                                   &mkp MB1         &mkp MB2      &kp ENTER
+&kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6      &kp F7     &kp F8    &kp F9      &kp F10            &kp F11  &kp F12
+&kp CAPS        &none            &none            &none            &none            &none       &none      &none     &kp UP      &none              &none    &none
+&kp LEFT_SHIFT  &none            &none            &none            &none            &none       &none      &kp LEFT  &kp DOWN    &kp RIGHT          &none    &none
+&kp LCTRL       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none       &none      &none     &kp PERIOD  &kp RIGHT_BRACKET  &none    &kp EQUAL
+                                                  &kp LEFT_ALT     &kp SPACE        &none       &none      &tog 2
+                                                                   &mkp MB1         &mkp MB2    &kp ENTER
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_NXT      &trans        &trans        &trans        &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                            &trans        &trans  &trans    &trans  &trans
+                                                          &trans  &trans    &trans
             >;
         };
 
