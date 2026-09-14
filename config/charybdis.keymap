@@ -108,7 +108,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,
+                // 编码器1：上下滚动,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
@@ -127,10 +127,10 @@
 
         layer_2 {
             bindings = <
-&bt BT_CLR_ALL  &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_NXT      &trans        &trans        &trans        &trans  &none     &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans  &trans    &trans  &trans           &trans           &trans           &trans        &trans
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &trans  &none     &trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans        &trans
+&bt BT_NXT      &trans        &trans        &trans        &trans  &none     &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans        &trans
+&trans          &trans        &trans        &trans        &trans  &trans    &trans  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp KP_ENTER  &trans
                                             &trans        &trans  &trans    &trans  &trans
                                                           &trans  &trans    &trans
             >;
