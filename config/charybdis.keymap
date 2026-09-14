@@ -98,17 +98,17 @@
 
         layer_0 {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &kp N5      &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E         &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O    &kp P     &kp BSLH
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp MINUS
-                                &kp LEFT_ALT  &kp SPACE  &tog 1      &kp LWIN   &kp SPACE
-                                              &mkp MB1   &mkp MB2    &kp ENTER
+&kp ESC         &kp N1  &kp N2  &kp N3     &kp N4        &kp N5      &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB         &kp Q   &kp W   &kp E      &kp R         &kp T       &kp Y      &kp U      &kp I      &kp O    &kp P     &kp BSLH
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D      &kp F         &kp G       &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp RCTRL       &kp Z   &kp X   &kp C      &kp V         &kp B       &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp MINUS
+                                &kp LCTRL  &kp LEFT_ALT  &tog 1      &kp LWIN   &kp SPACE
+                                           &mkp MB1      &mkp MB2    &kp ENTER
             >;
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
