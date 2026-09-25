@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15   // 10
 
 &lt {
     tapping-term-ms = <200>;
