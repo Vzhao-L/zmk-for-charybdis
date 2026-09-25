@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 5   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1   // 10
 
 &lt {
     tapping-term-ms = <200>;
@@ -18,8 +18,8 @@
 
 
 &msc {
-    acceleration-exponent = <0>;      // 0
-    time-to-max-speed-ms = <0>;       // 300
+    acceleration-exponent = <1>;      // 0
+    time-to-max-speed-ms = <50>;       // 300
     delay-ms = <0>;                   // 0
 };
 
