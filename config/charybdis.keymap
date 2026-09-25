@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20   // 10
 
 #include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
@@ -17,7 +17,7 @@
 
 
 &msc {
-    acceleration-exponent = <1>;      // 0
+    acceleration-exponent = <0>;      // 0
     time-to-max-speed-ms = <200>;       // 300
     delay-ms = <0>;                   // 0
 };
