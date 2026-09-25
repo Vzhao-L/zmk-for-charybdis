@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15   // 10
 
 #include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
