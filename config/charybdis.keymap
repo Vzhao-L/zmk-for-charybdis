@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 5   // 10
 
 &lt {
     tapping-term-ms = <200>;
@@ -16,9 +16,6 @@
     quick-tap-ms = <150>;
 };
 
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
     acceleration-exponent = <0>;      // 0
