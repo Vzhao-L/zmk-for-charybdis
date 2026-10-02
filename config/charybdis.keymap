@@ -12,30 +12,99 @@
     keymap {
         compatible = "zmk,keymap";
 
-      layer_0 {
+        layer_0 {
             bindings = <
-&kp Q  &kp W  &kp E         &kp R           &kp T          &kp Y        &kp U       &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D         &kp F           &kp G          &kp H        &kp J       &kp K      &kp L    &kp SEMI
-&kp Z  &kp X  &kp C         &kp V           &kp B          &kp N        &kp M       &kp COMMA  &kp DOT  &kp BACKSPACE
-              &kp LEFT_WIN  &kp LEFT_SHIFT  &lt 2 LCTRL    &lt 1 SPACE  &kp DELETE  &kp ENTER
+&kp Q  &kp W  &kp E  &kp R      &kp T    &kp Y            &kp U         &kp I           &kp O        &kp P        &kp A       &kp S
+&kp D  &kp F  &kp G  &kp H      &kp J    &kp K            &kp L         &kp SEMI        &kp Z        &kp X        &kp C       &kp V
+&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp BACKSPACE    &kp LEFT_WIN  &kp LEFT_SHIFT  &lt 2 LCTRL  &lt 1 SPACE  &kp DELETE  &kp ENTER
             >;
         };
 
         layer_1 {
             bindings = <
-&kp ESC    &kp F1  &kp F2          &kp F3    &kp F4      &none  &none            &none            &none            &none 
-&kp TAB    &kp F5  &kp F6          &kp F7    &kp F8      &none  &none            &none            &none            &none
-&kp GRAVE  &kp F9  &kp F10         &kp F11   &kp F12     &none  &none            &none            &none            &none
-                   &kp LEFT_SHIFT  &kp LWIN  &kp CAPS    &none  &kp LEFT_ALT     &kp LCTRL
+&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &none    &none           &none     &none      &none   &kp TAB       &kp F5
+&kp F6   &kp F7  &kp F8  &none   &none   &none    &none           &none     &kp GRAVE  &kp F9  &kp F10       &kp F11
+&kp F12  &none   &none   &none   &none   &none    &kp LEFT_SHIFT  &kp LWIN  &kp CAPS   &none   &kp LEFT_ALT  &kp LCTRL
             >;
         };
 
         layer_2 {
             bindings = <
-&none  &none  &none  &bt BT_NXT  &bt BT_CLR    &kp N1    &kp N2        &kp N3     &kp N4     &kp N5
-&none  &none  &none  &none       &none         &kp N6    &kp N7        &kp N8     &kp N9     &kp N0
-&none  &none  &none  &none       &none         &kp BSLH  &kp UP_ARROW  &kp FSLH   &kp MINUS  &kp EQUAL
-              &none  &none       &none         &kp LEFT  &kp DOWN      &kp RIGHT
+&none  &none     &none         &bt BT_NXT  &bt BT_CLR  &kp N1       &kp N2  &kp N3  &kp N4  &kp N5    &none     &none
+&none  &none     &none         &kp N6      &kp N7      &kp N8       &kp N9  &kp N0  &none   &none     &none     &none
+&none  &kp BSLH  &kp UP_ARROW  &kp FSLH    &kp MINUS   &kp EQUAL    &none   &none   &none   &kp LEFT  &kp DOWN  &kp RIGHT
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_10 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
