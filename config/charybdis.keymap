@@ -100,7 +100,7 @@
                                               &mkp MB1   &mkp MB2    &kp ENTER
             >;
 
-            sensor-bindings = <&scroll_vertical_encoder &scroll_horizontal_encoder>;
+            sensor-bindings = <&scroll_vertical_encoder &scroll_vertical_encoder>;
                 //&inc_dec_kp A B>;
                 //<&scroll_vertical_encoder>,
                 // 编码器1：上下滚动,,
