@@ -103,7 +103,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>; // 长按判定时间 (毫秒)
             flavor = "tap-preferred"; // 优先判定为短按
-            bindings = <&layer1_yellow>, <&kp N6>; 
+            bindings = <&layer1_yellow &kp N6>; 
             // bindings 的顺序: <长按行为>, <短按行为>
         };
 
