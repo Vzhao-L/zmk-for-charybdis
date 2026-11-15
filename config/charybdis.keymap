@@ -100,7 +100,7 @@
 
         tap6_hold_yellow: tap6_hold_yellow {
         compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <0>;
+        #binding-cells = <2>;
         tapping-term-ms = <200>;
         flavor = "tap-preferred";
         bindings = <&Mo2_macro_A>,<&kp>;  // 改成逗号分隔
