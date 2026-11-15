@@ -94,6 +94,22 @@
             bindings = <&Mo2_macro_A>,<&kp>;
         };
 
+
+
+
+
+         tap6_hold_yellow: tap6_hold_yellow {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; // 长按判定时间 (毫秒)
+            flavor = "tap-preferred"; // 优先判定为短按
+            bindings = <&layer1_yellow>, <&kp N6>; 
+            // bindings 的顺序: <长按行为>, <短按行为>
+        };
+
+
+
+
     };
 
     macros {
@@ -156,6 +172,21 @@
         bindings = <&macro_press &mo 3 &rgb_ug RGB_COLOR_HSB(0, 0, 100) &macro_pause_for_release &macro_release &mo 3 &rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
         };
 
+
+        layer1_yellow: layer1_yellow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &mo 1>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(60, 100, 100)>, // HSB 60 = 黄色
+                <&macro_pause_for_release>,
+                <&macro_release &mo 1>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0, 100, 100)>; // HSB 0 = 红色
+        };
+
+
+        
+
     };
 
     keymap {
@@ -163,7 +194,7 @@
 
         layer_0 {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &K5_layer3 0 N5      &K6_layer2 0 N6     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4     &K5_layer3 0 N5      &tap6_hold_yellow     &kp N7     &kp N8     &kp N9            &kp N0    &kp BACKSPACE
 &kp TAB         &kp Q   &kp W   &kp E         &kp R      &t_layer2 0 T      &kp Y      &kp U      &kp I      &kp O             &P_layer2 0 P    &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G       &kp H      &kp J      &kp K      &kp L             &kp SEMI  &aop_layer3 0 SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp LEFT_BRACKET  &kp FSLH  &kp MINUS
