@@ -174,14 +174,9 @@
 
 
         layer1_yellow: layer1_yellow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_press &mo 1>,
-                <&macro_tap &rgb_ug RGB_COLOR_HSB(60, 100, 100)>, // HSB 60 = 黄色
-                <&macro_pause_for_release>,
-                <&macro_release &mo 1>,
-                <&macro_tap &rgb_ug RGB_COLOR_HSB(0, 100, 100)>; // HSB 0 = 红色
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &mo 1 &rgb_ug RGB_COLOR_HSB(60, 100, 100) &macro_pause_for_release &macro_release &mo 1 &rgb_ug RGB_COLOR_HSB(0, 100, 100)>;
         };
 
 
